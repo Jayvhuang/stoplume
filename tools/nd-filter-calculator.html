@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="ND Filter &amp; Long Exposure — free &amp; bilingual | Stoplume" data-zh="ND 减光镜与长曝光 — 免费中英双语 | Stoplume">ND Filter &amp; Long Exposure — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Stops, optical density and the exact bulb time — in both directions." data-en="Stops, optical density and the exact bulb time — in both directions." data-zh="档数、光学密度与精确的 B 门时间——双向换算。">
+<meta name="keywords" content="nd filter calculator, long exposure calculator, neutral density chart, bulb time calculator, nd1000">
+<link rel="canonical" href="https://stoplume.com/tools/nd-filter-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/nd-filter-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/nd-filter-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/nd-filter-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ND Filter &amp; Long Exposure — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Stops, optical density and the exact bulb time — in both directions.">
+<meta property="og:url" content="https://stoplume.com/tools/nd-filter-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "ND Filter & Long Exposure",
+   "url": "https://stoplume.com/tools/nd-filter-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Stops, optical density and the exact bulb time — in both directions.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "ND Filter & Long Exposure",
+     "item": "https://stoplume.com/tools/nd-filter-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do I need to compensate for reciprocity failure?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On digital sensors, no — silicon response stays linear into multi-minute exposures. It matters on film, where exposures beyond roughly one second need extra time according to the film's own published curve. Stoplume computes the digital case."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does my ten-stop filter give a colour cast?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because 'neutral' is an aspiration. Dense resin and cheaper glass filters often transmit unevenly across the spectrum and infrared leaks past the visible band. Shoot raw, set a custom white balance through the filter, and the cast is recoverable."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I stack filters instead of buying a stronger one?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, stops add linearly: a 6-stop plus a 3-stop is a 9-stop. The costs are extra reflections, more vignetting on wide lenses, and compounded colour casts. Stoplume's stacking field adds the extra stops for you."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-nd" data-tool="nd">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">◐</span>
+    <div>
+      <h1 data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</h1>
+      <p class="panel-sub" data-en="Stops, optical density and the exact bulb time — in both directions." data-zh="档数、光学密度与精确的 B 门时间——双向换算。">Stops, optical density and the exact bulb time — in both directions.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field"><label for="nd-base" data-en="Metered shutter (no filter)" data-zh="未加镜测得的快门">Metered shutter (no filter)</label><input type="text" id="nd-base" value="1/60" autocomplete="off"><small class="hint" data-en="Type a shutter speed as 1/250, 0.5 or 30s." data-zh="快门可输入 1/250、0.5 或 30s 等格式。">Type a shutter speed as 1/250, 0.5 or 30s.</small></div><div class="field"><label for="nd-filter" data-en="ND filter" data-zh="ND 滤镜">ND filter</label><select id="nd-filter"><option value="1" data-en="ND2 · 0.3 · 1 stop" data-zh="ND2 · 0.3 · 1 档">ND2 · 0.3 · 1 stop</option><option value="2" data-en="ND4 · 0.6 · 2 stops" data-zh="ND4 · 0.6 · 2 档">ND4 · 0.6 · 2 stops</option><option value="3" data-en="ND8 · 0.9 · 3 stops" data-zh="ND8 · 0.9 · 3 档">ND8 · 0.9 · 3 stops</option><option value="4" data-en="ND16 · 1.2 · 4 stops" data-zh="ND16 · 1.2 · 4 档">ND16 · 1.2 · 4 stops</option><option value="5" data-en="ND32 · 1.5 · 5 stops" data-zh="ND32 · 1.5 · 5 档">ND32 · 1.5 · 5 stops</option><option value="6" data-en="ND64 · 1.8 · 6 stops" data-zh="ND64 · 1.8 · 6 档">ND64 · 1.8 · 6 stops</option><option value="10" selected data-en="ND1000 · 3.0 · 10 stops" data-zh="ND1000 · 3.0 · 10 档">ND1000 · 3.0 · 10 stops</option><option value="13" data-en="ND8000 · 3.9 · 13 stops" data-zh="ND8000 · 3.9 · 13 档">ND8000 · 3.9 · 13 stops</option><option value="15" data-en="ND32000 · 4.5 · 15 stops" data-zh="ND32000 · 4.5 · 15 档">ND32000 · 4.5 · 15 stops</option><option value="custom" data-en="Custom stops" data-zh="自定义档数">Custom stops</option></select></div><div class="field"><label for="nd-custom" data-en="Custom ND (stops)" data-zh="自定义 ND（档）">Custom ND (stops)</label><input type="number" id="nd-custom" value="10" min="0" max="24" step="0.1" inputmode="decimal"></div><div class="field"><label for="nd-stack" data-en="Extra stacked filter (stops)" data-zh="叠加的额外滤镜（档）">Extra stacked filter (stops)</label><input type="number" id="nd-stack" value="0" min="0" max="24" step="0.1" inputmode="decimal"></div><div class="field"><label for="nd-target" data-en="Or: target exposure time" data-zh="或：目标曝光时间">Or: target exposure time</label><input type="text" id="nd-target" value="30s" autocomplete="off"><small class="hint" data-en="Type a shutter speed as 1/250, 0.5 or 30s." data-zh="快门可输入 1/250、0.5 或 30s 等格式。">Type a shutter speed as 1/250, 0.5 or 30s.</small></div></form>
+    <div class="outputs">
+      <div class="results" id="nd-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="nd-svg"></div>
+        <figcaption class="viz-cap" id="nd-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>t<sub>ND</sub> = t<sub>metered</sub> × 2<sup>stops</sup>    ·    optical density D = stops × 0.30103    ·    ND factor = 2<sup>stops</sup><br>stops needed = log₂(t<sub>target</sub> / t<sub>metered</sub>)</code></div>
+  <div class="explain"><p data-en="A neutral density filter does one thing: it removes a known number of stops without changing colour. Everything else is bookkeeping — and bookkeeping is exactly where long exposures go wrong, because the numbers grow as powers of two and a one-stop slip at the ten-stop end is the difference between 30 seconds and a minute." data-zh="中性灰滤镜只做一件事：在不改变色彩的前提下减掉确定档数的光。剩下的全是算账——而长曝光翻车恰恰翻在算账上，因为数字按 2 的幂增长，在十档这一端错一档，就是 30 秒和 1 分钟的差别。">A neutral density filter does one thing: it removes a known number of stops without changing colour. Everything else is bookkeeping — and bookkeeping is exactly where long exposures go wrong, because the numbers grow as powers of two and a one-stop slip at the ten-stop end is the difference between 30 seconds and a minute.</p><p data-en="Stoplume converts in both directions. Meter without the filter and it gives you the bulb time formatted in hours, minutes and seconds. Or state the exposure time you want — two seconds to smooth water, thirty to erase a crowd, four minutes to turn clouds into streaks — and it tells you exactly how many stops of filtration that requires and which stack of common filters gets you there." data-zh="Stoplume 双向换算。不加镜测光，它给出按时分秒格式化的 B 门时间；或者你直接说出想要的曝光时间——2 秒让水面变滑、30 秒抹掉人群、4 分钟把云拉成条——它会算出这需要多少档减光，以及用哪几片常见滤镜叠加能达到。">Stoplume converts in both directions. Meter without the filter and it gives you the bulb time formatted in hours, minutes and seconds. Or state the exposure time you want — two seconds to smooth water, thirty to erase a crowd, four minutes to turn clouds into streaks — and it tells you exactly how many stops of filtration that requires and which stack of common filters gets you there.</p><p data-en="The three naming systems are shown together because manufacturers refuse to agree: the same glass is an ND1000, a 3.0 and a ten-stop depending on the box. Stoplume prints the filter factor, the optical density and the stop count for every result so you can match whatever is engraved on your own filter ring." data-zh="三套命名体系并排显示，因为厂商始终不肯统一：同一块玻璃，包装上可能写 ND1000、3.0 或十档。Stoplume 对每个结果都同时打印滤镜倍数、光学密度和档数，方便你对上自己滤镜环上刻的那一套。">The three naming systems are shown together because manufacturers refuse to agree: the same glass is an ND1000, a 3.0 and a ten-stop depending on the box. Stoplume prints the filter factor, the optical density and the stop count for every result so you can match whatever is engraved on your own filter ring.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Do I need to compensate for reciprocity failure?" data-zh="需要考虑倒易律失效吗？">Do I need to compensate for reciprocity failure?</summary><p data-en="On digital sensors, no — silicon response stays linear into multi-minute exposures. It matters on film, where exposures beyond roughly one second need extra time according to the film&#x27;s own published curve. Stoplume computes the digital case." data-zh="数码传感器不需要——硅的响应在数分钟曝光内保持线性。胶片才需要，超过约 1 秒后要按该胶片自己公布的曲线额外补时。Stoplume 计算的是数码情形。">On digital sensors, no — silicon response stays linear into multi-minute exposures. It matters on film, where exposures beyond roughly one second need extra time according to the film&#x27;s own published curve. Stoplume computes the digital case.</p></details><details class="faq-item"><summary data-en="Why does my ten-stop filter give a colour cast?" data-zh="为什么十档减光镜会偏色？">Why does my ten-stop filter give a colour cast?</summary><p data-en="Because &#x27;neutral&#x27; is an aspiration. Dense resin and cheaper glass filters often transmit unevenly across the spectrum and infrared leaks past the visible band. Shoot raw, set a custom white balance through the filter, and the cast is recoverable." data-zh="因为「中性」只是理想。高密度树脂和廉价玻璃在全光谱上的透过率并不均匀，红外还会漏过可见光波段之外。拍 RAW、隔着滤镜自定义白平衡，偏色基本可以救回来。">Because &#x27;neutral&#x27; is an aspiration. Dense resin and cheaper glass filters often transmit unevenly across the spectrum and infrared leaks past the visible band. Shoot raw, set a custom white balance through the filter, and the cast is recoverable.</p></details><details class="faq-item"><summary data-en="Can I stack filters instead of buying a stronger one?" data-zh="能不能叠加滤镜而不买更强的？">Can I stack filters instead of buying a stronger one?</summary><p data-en="Yes, stops add linearly: a 6-stop plus a 3-stop is a 9-stop. The costs are extra reflections, more vignetting on wide lenses, and compounded colour casts. Stoplume&#x27;s stacking field adds the extra stops for you." data-zh="可以，档数线性相加：6 档加 3 档就是 9 档。代价是额外反射、广角上更明显的暗角，以及叠加后的偏色。Stoplume 的叠加输入框会帮你加上这些档数。">Yes, stops add linearly: a 6-stop plus a 3-stop is a 9-stop. The costs are extra reflections, more vignetting on wide lenses, and compounded colour casts. Stoplume&#x27;s stacking field adds the extra stops for you.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Neutral-density_filter" target="_blank" rel="noopener nofollow">Neutral-density filter — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Reciprocity_(photography)" target="_blank" rel="noopener nofollow">Reciprocity (photography) — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
