@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Golden Hour &amp; Sun Position — free &amp; bilingual | Stoplume" data-zh="黄金时刻与太阳方位 — 免费中英双语 | Stoplume">Golden Hour &amp; Sun Position — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Sunrise, sunset, golden and blue hour for any place and date — computed offline." data-en="Sunrise, sunset, golden and blue hour for any place and date — computed offline." data-zh="任意地点与日期的日出日落、黄金与蓝调时刻——完全离线计算。">
+<meta name="keywords" content="golden hour calculator, blue hour times, sunrise sunset calculator, sun position azimuth, civil twilight">
+<link rel="canonical" href="https://stoplume.com/tools/golden-hour-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/golden-hour-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/golden-hour-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/golden-hour-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Golden Hour &amp; Sun Position — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Sunrise, sunset, golden and blue hour for any place and date — computed offline.">
+<meta property="og:url" content="https://stoplume.com/tools/golden-hour-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Golden Hour & Sun Position",
+   "url": "https://stoplume.com/tools/golden-hour-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Sunrise, sunset, golden and blue hour for any place and date — computed offline.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Golden Hour & Sun Position",
+     "item": "https://stoplume.com/tools/golden-hour-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why do golden hour times differ between apps?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because 'golden hour' has no standards body. Some apps use 0° to +6°, others −4° to +6°. Stoplume states its thresholds on the page, so you can compare like with like instead of assuming one app is broken."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How accurate is the calculation?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The NOAA algorithm it implements is accurate to well under a minute for dates between 1901 and 2099 at latitudes below about 72°. Near the poles, and on days when the sun barely crosses a threshold, precision degrades and Stoplume says so instead of printing a false time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the azimuth good for?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Planning. If you know sunrise is at azimuth 62° you can check on any map whether the light will reach a west-facing valley or be blocked by a ridge — before driving there at four in the morning."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-sun" data-tool="sun">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">☀</span>
+    <div>
+      <h1 data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</h1>
+      <p class="panel-sub" data-en="Sunrise, sunset, golden and blue hour for any place and date — computed offline." data-zh="任意地点与日期的日出日落、黄金与蓝调时刻——完全离线计算。">Sunrise, sunset, golden and blue hour for any place and date — computed offline.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field"><label for="sun-lat" data-en="Latitude (°N positive)" data-zh="纬度（北纬为正）">Latitude (°N positive)</label><input type="number" id="sun-lat" value="40.7128" min="-89.9" max="89.9" step="0.0001" inputmode="decimal"></div><div class="field"><label for="sun-lon" data-en="Longitude (°E positive)" data-zh="经度（东经为正）">Longitude (°E positive)</label><input type="number" id="sun-lon" value="-74.006" min="-180" max="180" step="0.0001" inputmode="decimal"></div><div class="field"><label for="sun-place" data-en="Quick location" data-zh="快速定位">Quick location</label><select id="sun-place"><option value="" selected data-en="— pick a city —" data-zh="— 选择城市 —">— pick a city —</option><option value="40.7128,-74.0060,-5" data-en="New York, USA" data-zh="美国 纽约">New York, USA</option><option value="51.5072,-0.1276,0" data-en="London, UK" data-zh="英国 伦敦">London, UK</option><option value="48.8566,2.3522,1" data-en="Paris, France" data-zh="法国 巴黎">Paris, France</option><option value="35.6762,139.6503,9" data-en="Tokyo, Japan" data-zh="日本 东京">Tokyo, Japan</option><option value="39.9042,116.4074,8" data-en="Beijing, China" data-zh="中国 北京">Beijing, China</option><option value="31.2304,121.4737,8" data-en="Shanghai, China" data-zh="中国 上海">Shanghai, China</option><option value="22.3193,114.1694,8" data-en="Hong Kong, China" data-zh="中国香港">Hong Kong, China</option><option value="1.3521,103.8198,8" data-en="Singapore" data-zh="新加坡">Singapore</option><option value="-33.8688,151.2093,10" data-en="Sydney, Australia" data-zh="澳大利亚 悉尼">Sydney, Australia</option><option value="64.1466,-21.9426,0" data-en="Reykjavík, Iceland" data-zh="冰岛 雷克雅未克">Reykjavík, Iceland</option><option value="-22.9068,-43.1729,-3" data-en="Rio de Janeiro, Brazil" data-zh="巴西 里约热内卢">Rio de Janeiro, Brazil</option><option value="37.7749,-122.4194,-8" data-en="San Francisco, USA" data-zh="美国 旧金山">San Francisco, USA</option></select></div><div class="field"><label for="sun-date" data-en="Date" data-zh="日期">Date</label><input type="date" id="sun-date"></div><div class="field"><label for="sun-tz" data-en="UTC offset (hours)" data-zh="UTC 时区偏移（小时）">UTC offset (hours)</label><input type="number" id="sun-tz" value="-5" min="-12" max="14" step="0.25" inputmode="decimal"></div></form>
+    <div class="outputs">
+      <div class="results" id="sun-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="sun-svg"></div>
+        <figcaption class="viz-cap" id="sun-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>NOAA solar position algorithm — Julian day → geometric mean longitude → equation of centre → apparent longitude → declination and equation of time → hour angle at target elevation.<br>Golden hour: sun elevation −4° … +6°    ·    Blue hour: −6° … −4°    ·    Civil twilight: −6°</code></div>
+  <div class="explain"><p data-en="Warm light near the horizon is not a mood, it is atmospheric physics. When the sun is low its rays travel through many times more air than at noon; short wavelengths scatter away and what reaches your subject is the long, warm remainder, arriving almost horizontally. That is why golden hour flatters faces and rakes across texture — and why it is short, and why its length depends enormously on your latitude and the date." data-zh="地平线附近的暖光不是氛围，是大气物理。太阳很低时，光线穿过的空气是正午的许多倍，短波长被散射掉，抵达主体的是剩下的长波暖光，而且几乎是水平射来的。这就是黄金时刻既显脸型又能刮出质感的原因——也是它短暂、且长度极度依赖纬度与日期的原因。">Warm light near the horizon is not a mood, it is atmospheric physics. When the sun is low its rays travel through many times more air than at noon; short wavelengths scatter away and what reaches your subject is the long, warm remainder, arriving almost horizontally. That is why golden hour flatters faces and rakes across texture — and why it is short, and why its length depends enormously on your latitude and the date.</p><p data-en="Stoplume implements the NOAA solar position algorithm directly in your browser. Nothing is sent to a server, and the calculation works with no network at all once the page is loaded. Enter coordinates and a date and you get sunrise, sunset, solar noon, civil twilight, the morning and evening golden hour windows, the blue hour, total day length, and the compass azimuth the sun rises and sets at — which is the number that actually decides whether the light will hit the front of your building." data-zh="Stoplume 在你的浏览器里直接实现了 NOAA 太阳位置算法。没有任何数据发往服务器，页面加载后完全断网也能算。输入坐标和日期，你会得到日出、日落、正午、民用曙暮光、早晚两段黄金时刻窗口、蓝调时刻、全天日照长度，以及日出日落的罗盘方位角——真正决定光会不会打在你那栋楼正面的，正是这个数字。">Stoplume implements the NOAA solar position algorithm directly in your browser. Nothing is sent to a server, and the calculation works with no network at all once the page is loaded. Enter coordinates and a date and you get sunrise, sunset, solar noon, civil twilight, the morning and evening golden hour windows, the blue hour, total day length, and the compass azimuth the sun rises and sets at — which is the number that actually decides whether the light will hit the front of your building.</p><p data-en="The elevation thresholds are stated rather than hidden: golden hour is taken as the sun between −4° and +6°, blue hour between −6° and −4°, civil twilight at −6°, and sunrise/sunset at −0.833° to account for refraction and the solar disk radius. Different apps choose slightly different cut-offs, so the definition matters more than another decimal place." data-zh="高度角阈值是写明的而不是藏起来的：黄金时刻取太阳高度 −4° 到 +6°，蓝调时刻 −6° 到 −4°，民用曙暮光 −6°，日出日落取 −0.833°（计入大气折射与日面半径）。不同 App 的切分略有差异，所以定义比多一位小数更重要。">The elevation thresholds are stated rather than hidden: golden hour is taken as the sun between −4° and +6°, blue hour between −6° and −4°, civil twilight at −6°, and sunrise/sunset at −0.833° to account for refraction and the solar disk radius. Different apps choose slightly different cut-offs, so the definition matters more than another decimal place.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Why do golden hour times differ between apps?" data-zh="为什么不同 App 的黄金时刻不一样？">Why do golden hour times differ between apps?</summary><p data-en="Because &#x27;golden hour&#x27; has no standards body. Some apps use 0° to +6°, others −4° to +6°. Stoplume states its thresholds on the page, so you can compare like with like instead of assuming one app is broken." data-zh="因为「黄金时刻」没有标准化定义。有的用 0° 到 +6°，有的用 −4° 到 +6°。Stoplume 在页面上写明了自己的阈值，你可以在同一口径下比较，而不是猜谁算错了。">Because &#x27;golden hour&#x27; has no standards body. Some apps use 0° to +6°, others −4° to +6°. Stoplume states its thresholds on the page, so you can compare like with like instead of assuming one app is broken.</p></details><details class="faq-item"><summary data-en="How accurate is the calculation?" data-zh="计算有多准？">How accurate is the calculation?</summary><p data-en="The NOAA algorithm it implements is accurate to well under a minute for dates between 1901 and 2099 at latitudes below about 72°. Near the poles, and on days when the sun barely crosses a threshold, precision degrades and Stoplume says so instead of printing a false time." data-zh="所采用的 NOAA 算法在 1901–2099 年、纬度约 72° 以内的误差远小于一分钟。靠近极区、或太阳刚好擦过某个阈值的日子，精度会下降，此时 Stoplume 会直接说明，而不是编一个时间出来。">The NOAA algorithm it implements is accurate to well under a minute for dates between 1901 and 2099 at latitudes below about 72°. Near the poles, and on days when the sun barely crosses a threshold, precision degrades and Stoplume says so instead of printing a false time.</p></details><details class="faq-item"><summary data-en="What is the azimuth good for?" data-zh="方位角有什么用？">What is the azimuth good for?</summary><p data-en="Planning. If you know sunrise is at azimuth 62° you can check on any map whether the light will reach a west-facing valley or be blocked by a ridge — before driving there at four in the morning." data-zh="用来踩点。如果知道日出方位角是 62°，你可以在地图上判断光能不能照进那条朝西的山谷，还是会被山脊挡住——在凌晨四点开车过去之前。">Planning. If you know sunrise is at azimuth 62° you can check on any map whether the light will reach a west-facing valley or be blocked by a ridge — before driving there at four in the morning.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://gml.noaa.gov/grad/solcalc/" target="_blank" rel="noopener nofollow">NOAA Solar Calculator</a></li><li><a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html" target="_blank" rel="noopener nofollow">NOAA solar calculation details</a></li><li><a href="https://en.wikipedia.org/wiki/Twilight" target="_blank" rel="noopener nofollow">Twilight — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
