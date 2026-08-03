@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Crop Factor &amp; Full-Frame Equivalence — free &amp; bilingual | Stoplume" data-zh="等效焦距与画幅换算 — 免费中英双语 | Stoplume">Crop Factor &amp; Full-Frame Equivalence — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Equivalent focal length, equivalent aperture and equivalent ISO between any two formats." data-en="Equivalent focal length, equivalent aperture and equivalent ISO between any two formats." data-zh="任意两个画幅之间的等效焦距、等效光圈与等效 ISO。">
+<meta name="keywords" content="crop factor calculator, equivalent focal length, equivalent aperture, full frame equivalent, micro four thirds equivalence">
+<link rel="canonical" href="https://stoplume.com/tools/crop-factor-equivalence.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/crop-factor-equivalence.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/crop-factor-equivalence.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/crop-factor-equivalence.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Crop Factor &amp; Full-Frame Equivalence — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Equivalent focal length, equivalent aperture and equivalent ISO between any two formats.">
+<meta property="og:url" content="https://stoplume.com/tools/crop-factor-equivalence.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Crop Factor & Full-Frame Equivalence",
+   "url": "https://stoplume.com/tools/crop-factor-equivalence.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Equivalent focal length, equivalent aperture and equivalent ISO between any two formats.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Crop Factor & Full-Frame Equivalence",
+     "item": "https://stoplume.com/tools/crop-factor-equivalence.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does a crop sensor make my lens longer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The lens projects the same image circle; the smaller sensor simply records a smaller part of it. The subject is not magnified, it is cropped — which is why perspective and compression stay exactly the same from the same shooting position."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is f/1.8 on Micro Four Thirds 'really' f/3.6?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For brightness, no — it meters as f/1.8. For depth of field and total light gathered, yes, it behaves like f/3.6 on full frame. Both statements are true because they describe different physical quantities."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which crop factor should I use for video?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use the diagonal of the area actually read out. Many cameras crop further in 4K or apply a Super 35 window, so the still-photo crop factor can understate the real one. Enter the recorded sensor area as a custom size for an honest number."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-crop" data-tool="crop">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">▣</span>
+    <div>
+      <h1 data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</h1>
+      <p class="panel-sub" data-en="Equivalent focal length, equivalent aperture and equivalent ISO between any two formats." data-zh="任意两个画幅之间的等效焦距、等效光圈与等效 ISO。">Equivalent focal length, equivalent aperture and equivalent ISO between any two formats.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field field-cam"><label for="crop-from" data-en="Your sensor" data-zh="你的画幅">Your sensor</label><div class="camchip" data-camchip="1"><span class="camchip-name">Full Frame 36 × 24</span><a class="camchip-edit" href="#camera" data-en="change" data-zh="更改">change</a></div><small class="hint" data-en="Shared camera profile — set it once, every tool follows." data-zh="全站共用的相机档案——设置一次，所有工具同步。">Shared camera profile — set it once, every tool follows.</small></div><div class="field"><label for="crop-to" data-en="Compare against" data-zh="对比画幅">Compare against</label><select id="crop-to"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select></div><div class="field"><label for="crop-focal" data-en="Focal length (mm)" data-zh="焦距（mm）">Focal length (mm)</label><input type="number" id="crop-focal" value="25" min="1" max="2000" step="0.1" inputmode="decimal"></div><div class="field"><label for="crop-aperture" data-en="Aperture f/" data-zh="光圈 f/">Aperture f/</label><input type="number" id="crop-aperture" value="1.8" min="0.7" max="64" step="0.1" inputmode="decimal"></div><div class="field"><label for="crop-iso" data-en="ISO" data-zh="ISO">ISO</label><input type="number" id="crop-iso" value="800" min="6" max="409600" step="1" inputmode="decimal"></div></form>
+    <div class="outputs">
+      <div class="results" id="crop-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="crop-svg"></div>
+        <figcaption class="viz-cap" id="crop-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>crop = 43.267 mm / sensor diagonal    ·    f<sub>eq</sub> = f × (crop<sub>to→from</sub>)<br>N<sub>eq</sub> = N × ratio (depth of field &amp; total light)    ·    ISO<sub>eq</sub> = ISO × ratio²</code></div>
+  <div class="explain"><p data-en="Crop factor is just the ratio of two sensor diagonals. Multiply your focal length by it and you get the full-frame lens that would frame the same scene from the same spot. That part is uncontroversial, and it is where most calculators stop." data-zh="等效系数只是两个画幅对角线的比值。焦距乘上它，就得到「站在同一位置拍出同样构图」的全画幅镜头焦距。这一段没有争议，多数计算器也就到此为止。">Crop factor is just the ratio of two sensor diagonals. Multiply your focal length by it and you get the full-frame lens that would frame the same scene from the same spot. That part is uncontroversial, and it is where most calculators stop.</p><p data-en="The part that starts arguments is aperture. The f-number sets image brightness on any format, so f/2.8 is f/2.8 for metering everywhere. But depth of field and the &lt;em&gt;total&lt;/em&gt; amount of light collected by the whole frame both scale with the physical aperture diameter, and that scales with crop factor. A 25 mm f/1.8 on Micro Four Thirds frames like 50 mm and renders depth of field like f/3.6 on full frame while gathering the same total light as f/3.6 — which is exactly why the equivalent ISO scales with the square of the ratio." data-zh="会吵起来的是光圈。f 值决定任何画幅上的画面亮度，所以测光时 f/2.8 到哪儿都是 f/2.8。但景深，以及整幅画面收集到的&lt;em&gt;总&lt;/em&gt;光量，都随物理光孔直径变化，而它随等效系数缩放。M4/3 上的 25mm f/1.8 构图等于 50mm，景深表现相当于全画幅 f/3.6，收集的总光量也相当于 f/3.6——这正是等效 ISO 要按比值平方缩放的原因。">The part that starts arguments is aperture. The f-number sets image brightness on any format, so f/2.8 is f/2.8 for metering everywhere. But depth of field and the <em>total</em> amount of light collected by the whole frame both scale with the physical aperture diameter, and that scales with crop factor. A 25 mm f/1.8 on Micro Four Thirds frames like 50 mm and renders depth of field like f/3.6 on full frame while gathering the same total light as f/3.6 — which is exactly why the equivalent ISO scales with the square of the ratio.</p><p data-en="Stoplume reports all three equivalences side by side and draws the two sensors to scale, so you can see the geometry instead of memorising folklore. It also states plainly what does &lt;em&gt;not&lt;/em&gt; change: your exposure. Nothing here tells you to open up two stops for the same brightness." data-zh="Stoplume 把三种等效并排列出，并按真实比例画出两块传感器，让你看几何关系而不是背口诀。它同时明确写出&lt;em&gt;不&lt;/em&gt;变的是什么：你的曝光。这里没有任何一条在告诉你为了同样亮度要开大两档。">Stoplume reports all three equivalences side by side and draws the two sensors to scale, so you can see the geometry instead of memorising folklore. It also states plainly what does <em>not</em> change: your exposure. Nothing here tells you to open up two stops for the same brightness.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Does a crop sensor make my lens longer?" data-zh="半画幅会让镜头变长吗？">Does a crop sensor make my lens longer?</summary><p data-en="No. The lens projects the same image circle; the smaller sensor simply records a smaller part of it. The subject is not magnified, it is cropped — which is why perspective and compression stay exactly the same from the same shooting position." data-zh="不会。镜头投射的像场没变，只是较小的传感器截取了其中较小的一块。主体不是被放大而是被裁切——所以在同一位置拍摄时，透视和压缩感完全不变。">No. The lens projects the same image circle; the smaller sensor simply records a smaller part of it. The subject is not magnified, it is cropped — which is why perspective and compression stay exactly the same from the same shooting position.</p></details><details class="faq-item"><summary data-en="Is f/1.8 on Micro Four Thirds &#x27;really&#x27; f/3.6?" data-zh="M4/3 的 f/1.8「其实」是 f/3.6 吗？">Is f/1.8 on Micro Four Thirds &#x27;really&#x27; f/3.6?</summary><p data-en="For brightness, no — it meters as f/1.8. For depth of field and total light gathered, yes, it behaves like f/3.6 on full frame. Both statements are true because they describe different physical quantities." data-zh="论亮度，不是——测光就是 f/1.8。论景深和总进光量，是的，它的表现相当于全画幅 f/3.6。两种说法都对，因为它们描述的是不同的物理量。">For brightness, no — it meters as f/1.8. For depth of field and total light gathered, yes, it behaves like f/3.6 on full frame. Both statements are true because they describe different physical quantities.</p></details><details class="faq-item"><summary data-en="Which crop factor should I use for video?" data-zh="拍视频该用哪个等效系数？">Which crop factor should I use for video?</summary><p data-en="Use the diagonal of the area actually read out. Many cameras crop further in 4K or apply a Super 35 window, so the still-photo crop factor can understate the real one. Enter the recorded sensor area as a custom size for an honest number." data-zh="用实际读出区域的对角线。很多相机在 4K 下会额外裁切或采用 Super 35 窗口，照片模式的等效系数会低估真实值。把实际录制区域作为自定义尺寸输入才准确。">Use the diagonal of the area actually read out. Many cameras crop further in 4K or apply a Super 35 window, so the still-photo crop factor can understate the real one. Enter the recorded sensor area as a custom size for an honest number.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Crop_factor" target="_blank" rel="noopener nofollow">Crop factor — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Image_sensor_format" target="_blank" rel="noopener nofollow">Image sensor format — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
