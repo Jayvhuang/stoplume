@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Field of View &amp; Framing Distance — free &amp; bilingual | Stoplume" data-zh="视角与取景距离 — 免费中英双语 | Stoplume">Field of View &amp; Framing Distance — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Angle of view, frame size at any distance, and how far back to stand for your subject." data-en="Angle of view, frame size at any distance, and how far back to stand for your subject." data-zh="视角、任意距离上的画面尺寸，以及拍摄某个主体该退到多远。">
+<meta name="keywords" content="field of view calculator, angle of view, framing distance, subject distance calculator, photography focal length">
+<link rel="canonical" href="https://stoplume.com/tools/field-of-view-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/field-of-view-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/field-of-view-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/field-of-view-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Field of View &amp; Framing Distance — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Angle of view, frame size at any distance, and how far back to stand for your subject.">
+<meta property="og:url" content="https://stoplume.com/tools/field-of-view-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Field of View & Framing Distance",
+   "url": "https://stoplume.com/tools/field-of-view-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Angle of view, frame size at any distance, and how far back to stand for your subject.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Field of View & Framing Distance",
+     "item": "https://stoplume.com/tools/field-of-view-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why is the diagonal angle of view larger than the horizontal one?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because the diagonal is the longest dimension of the frame. A 50 mm lens on full frame is about 47° diagonally but only 40° horizontally — worth remembering when a spec sheet promises a wider look than you get."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does focal length compress perspective?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No — distance does. Perspective is set purely by where the camera stands. Long lenses are associated with compression only because they let you fill the frame from far away."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the ground sample distance shown in the results?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is how many millimetres of your subject fall on a single pixel at the stated distance. It tells you whether a licence plate, a fabric weave or a bird's eye can physically be resolved before you take the shot."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-fov" data-tool="fov">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">◹</span>
+    <div>
+      <h1 data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</h1>
+      <p class="panel-sub" data-en="Angle of view, frame size at any distance, and how far back to stand for your subject." data-zh="视角、任意距离上的画面尺寸，以及拍摄某个主体该退到多远。">Angle of view, frame size at any distance, and how far back to stand for your subject.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field field-cam"><label for="fov-sensor" data-en="Sensor format" data-zh="画幅">Sensor format</label><div class="camchip" data-camchip="1"><span class="camchip-name">Full Frame 36 × 24</span><a class="camchip-edit" href="#camera" data-en="change" data-zh="更改">change</a></div><small class="hint" data-en="Shared camera profile — set it once, every tool follows." data-zh="全站共用的相机档案——设置一次，所有工具同步。">Shared camera profile — set it once, every tool follows.</small></div><div class="field"><label for="fov-focal" data-en="Focal length (mm)" data-zh="焦距（mm）">Focal length (mm)</label><input type="number" id="fov-focal" value="85" min="1" max="2000" step="0.1" inputmode="decimal"></div><div class="field"><label for="fov-distance" data-en="Subject distance (m)" data-zh="主体距离（m）">Subject distance (m)</label><input type="number" id="fov-distance" value="4" min="0.05" max="10000" step="0.01" inputmode="decimal"></div><div class="field"><label for="fov-subject" data-en="Subject height to fill frame (m)" data-zh="要充满画面的主体高度（m）">Subject height to fill frame (m)</label><input type="number" id="fov-subject" value="1.75" min="0.001" max="1000" step="0.001" inputmode="decimal"></div><div class="field"><label for="fov-orient" data-en="Orientation" data-zh="取景方向">Orientation</label><select id="fov-orient"><option value="land" selected data-en="Landscape" data-zh="横构图">Landscape</option><option value="port" data-en="Portrait" data-zh="竖构图">Portrait</option></select></div></form>
+    <div class="outputs">
+      <div class="results" id="fov-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="fov-svg"></div>
+        <figcaption class="viz-cap" id="fov-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>AoV = 2 · arctan(d / 2f)    ·    frame size = distance × sensor size / f<br>magnification m = f / (s − f)    ·    required distance s = f (1 + 1/m)</code></div>
+  <div class="explain"><p data-en="Angle of view is fixed by two numbers only: the focal length and the sensor dimension it is projected onto. Everything a photographer calls &#x27;wide&#x27; or &#x27;long&#x27; comes out of that one arctangent. Stoplume reports horizontal, vertical and diagonal angle of view separately, because the diagonal figure quoted in lens specs is always the most flattering one and rarely the one you compose with." data-zh="视角只由两个数字决定：焦距，以及它投射到的传感器尺寸。摄影师口中所有的「广」与「长」，都出自这一个反正切。Stoplume 会分别给出水平、垂直、对角三个视角——因为镜头规格上标注的对角视角永远是最好看的那个，却很少是你构图时用的那个。">Angle of view is fixed by two numbers only: the focal length and the sensor dimension it is projected onto. Everything a photographer calls 'wide' or 'long' comes out of that one arctangent. Stoplume reports horizontal, vertical and diagonal angle of view separately, because the diagonal figure quoted in lens specs is always the most flattering one and rarely the one you compose with.</p><p data-en="The practically useful half is the inverse problem: you know the subject and the framing you want, and you need to know where to stand. Enter a subject height — 1.75 m for a standing adult, 0.30 m for a head-and-shoulders portrait, 0.05 m for a flower — and the calculator returns the exact distance at which it fills the frame, along with the reproduction ratio at that distance." data-zh="更实用的是它的反问题：你已经知道主体和想要的构图，需要知道该站在哪里。输入主体高度——站立成人 1.75 m、半身肖像 0.30 m、一朵花 0.05 m——计算器会给出让它恰好充满画面的精确距离，以及该距离下的放大倍率。">The practically useful half is the inverse problem: you know the subject and the framing you want, and you need to know where to stand. Enter a subject height — 1.75 m for a standing adult, 0.30 m for a head-and-shoulders portrait, 0.05 m for a flower — and the calculator returns the exact distance at which it fills the frame, along with the reproduction ratio at that distance.</p><p data-en="Because working distance changes perspective and focal length does not, this is also the tool that settles the &#x27;lens compression&#x27; argument. Frame the same subject the same size from a longer lens and you must stand further back; that greater distance, not the glass, is what flattens the face and pulls the background forward." data-zh="由于改变透视的是工作距离而不是焦距，这个工具也顺带终结了「长焦压缩」之争：用更长的焦距把同一主体拍成同样大小，你必须退得更远；把脸拉平、把背景拉近的是这段距离，而不是那块玻璃。">Because working distance changes perspective and focal length does not, this is also the tool that settles the 'lens compression' argument. Frame the same subject the same size from a longer lens and you must stand further back; that greater distance, not the glass, is what flattens the face and pulls the background forward.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Why is the diagonal angle of view larger than the horizontal one?" data-zh="为什么对角视角比水平视角大？">Why is the diagonal angle of view larger than the horizontal one?</summary><p data-en="Because the diagonal is the longest dimension of the frame. A 50 mm lens on full frame is about 47° diagonally but only 40° horizontally — worth remembering when a spec sheet promises a wider look than you get." data-zh="因为对角线是画面最长的一边。全画幅 50mm 的对角视角约 47°，水平视角只有 40°——看规格表时值得记住这一点。">Because the diagonal is the longest dimension of the frame. A 50 mm lens on full frame is about 47° diagonally but only 40° horizontally — worth remembering when a spec sheet promises a wider look than you get.</p></details><details class="faq-item"><summary data-en="Does focal length compress perspective?" data-zh="长焦会压缩透视吗？">Does focal length compress perspective?</summary><p data-en="No — distance does. Perspective is set purely by where the camera stands. Long lenses are associated with compression only because they let you fill the frame from far away." data-zh="不会——压缩透视的是距离。透视完全由机位决定。长焦之所以和压缩感绑在一起，只是因为它让你能站得很远还把画面填满。">No — distance does. Perspective is set purely by where the camera stands. Long lenses are associated with compression only because they let you fill the frame from far away.</p></details><details class="faq-item"><summary data-en="What is the ground sample distance shown in the results?" data-zh="结果里的地面采样距离是什么？">What is the ground sample distance shown in the results?</summary><p data-en="It is how many millimetres of your subject fall on a single pixel at the stated distance. It tells you whether a licence plate, a fabric weave or a bird&#x27;s eye can physically be resolved before you take the shot." data-zh="指在给定距离上，主体的多少毫米落在一个像素上。它告诉你车牌、织物纹理或鸟眼在按下快门前是否物理上可能被分辨出来。">It is how many millimetres of your subject fall on a single pixel at the stated distance. It tells you whether a licence plate, a fabric weave or a bird&#x27;s eye can physically be resolved before you take the shot.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Angle_of_view" target="_blank" rel="noopener nofollow">Angle of view — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Magnification" target="_blank" rel="noopener nofollow">Magnification — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
