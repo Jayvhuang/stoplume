@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Astro Shutter — NPF vs 500 Rule — free &amp; bilingual | Stoplume" data-zh="星空快门 — NPF 与 500 法则 — 免费中英双语 | Stoplume">Astro Shutter — NPF vs 500 Rule — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Longest exposure before stars trail, computed from your pixel pitch — not a folk rule." data-en="Longest exposure before stars trail, computed from your pixel pitch — not a folk rule." data-zh="根据你的像素间距计算星点拖线前的最长曝光，而不是拍脑袋的口诀。">
+<meta name="keywords" content="500 rule calculator, NPF rule, astrophotography exposure time, star trail calculator, milky way shutter speed">
+<link rel="canonical" href="https://stoplume.com/tools/astrophotography-shutter-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/astrophotography-shutter-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/astrophotography-shutter-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/astrophotography-shutter-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Astro Shutter — NPF vs 500 Rule — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Longest exposure before stars trail, computed from your pixel pitch — not a folk rule.">
+<meta property="og:url" content="https://stoplume.com/tools/astrophotography-shutter-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Astro Shutter — NPF vs 500 Rule",
+   "url": "https://stoplume.com/tools/astrophotography-shutter-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Longest exposure before stars trail, computed from your pixel pitch — not a folk rule.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Astro Shutter — NPF vs 500 Rule",
+     "item": "https://stoplume.com/tools/astrophotography-shutter-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which rule should I trust?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use NPF for anything you will print or view at 100 %, and treat the 500 rule as a rough field fallback. The two agree only by coincidence on low-resolution full-frame bodies at moderate focal lengths."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does declination matter?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Apparent star speed is proportional to the cosine of declination. At δ = 60° stars drift at half the equatorial rate, so you can double the exposure for the same trail length — a real, measurable gain, not a rounding trick."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does a star tracker make this irrelevant?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It changes the question. With a tracker your limit becomes polar-alignment error and periodic error rather than Earth's rotation, but these numbers still tell you what an untracked frame in the same set can afford — useful when you shoot a tracked sky and an untracked foreground."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-astro" data-tool="astro">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">✦</span>
+    <div>
+      <h1 data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</h1>
+      <p class="panel-sub" data-en="Longest exposure before stars trail, computed from your pixel pitch — not a folk rule." data-zh="根据你的像素间距计算星点拖线前的最长曝光，而不是拍脑袋的口诀。">Longest exposure before stars trail, computed from your pixel pitch — not a folk rule.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field field-cam"><label for="astro-sensor" data-en="Sensor format" data-zh="画幅">Sensor format</label><div class="camchip" data-camchip="1"><span class="camchip-name">Full Frame 36 × 24</span><a class="camchip-edit" href="#camera" data-en="change" data-zh="更改">change</a></div><small class="hint" data-en="Shared camera profile — set it once, every tool follows." data-zh="全站共用的相机档案——设置一次，所有工具同步。">Shared camera profile — set it once, every tool follows.</small></div><div class="field"><label for="astro-focal" data-en="Focal length (mm)" data-zh="焦距（mm）">Focal length (mm)</label><input type="number" id="astro-focal" value="20" min="1" max="2000" step="0.1" inputmode="decimal"></div><div class="field"><label for="astro-aperture" data-en="Aperture f/" data-zh="光圈 f/">Aperture f/</label><input type="number" id="astro-aperture" value="2.8" min="0.7" max="32" step="0.1" inputmode="decimal"></div><div class="field"><label for="astro-dec" data-en="Star declination (°)" data-zh="恒星赤纬（°）">Star declination (°)</label><input type="number" id="astro-dec" value="0" min="-89" max="89" step="1" inputmode="decimal"></div><div class="field"><label for="astro-acc" data-en="NPF tolerance" data-zh="NPF 容差">NPF tolerance</label><select id="astro-acc"><option value="1" selected data-en="Strict — pixel-perfect points" data-zh="严格 — 像素级点状">Strict — pixel-perfect points</option><option value="2" data-en="Default — mild trailing accepted" data-zh="默认 — 允许轻微拖线">Default — mild trailing accepted</option><option value="3" data-en="Loose — web-size output" data-zh="宽松 — 网络尺寸输出">Loose — web-size output</option></select></div><div class="field"><label for="astro-test" data-en="Test a shutter speed" data-zh="试算某个快门">Test a shutter speed</label><input type="text" id="astro-test" value="20s" autocomplete="off"><small class="hint" data-en="Type a shutter speed as 1/250, 0.5 or 30s." data-zh="快门可输入 1/250、0.5 或 30s 等格式。">Type a shutter speed as 1/250, 0.5 or 30s.</small></div></form>
+    <div class="outputs">
+      <div class="results" id="astro-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="astro-svg"></div>
+        <figcaption class="viz-cap" id="astro-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>NPF t = k · (35 N + 30 p) / (f · cos δ)   (p = pixel pitch in µm)<br>500 rule t = 500 / (f × crop)    ·    drift = 15.041″/s × cos δ    ·    arcsec per pixel = 206265 · p / (1000 f)</code></div>
+  <div class="explain"><p data-en="The 500 rule — divide 500 by your equivalent focal length — was written for 35 mm film, where grain hid a lot. On a 45 MP sensor examined at 100 % it is simply wrong, often by a factor of two, because it knows nothing about pixel pitch. The NPF rule, published by Frédéric Michaud of the Société Astronomique du Havre, fixes that by folding in aperture and the physical size of one photosite." data-zh="500 法则——500 除以等效焦距——是为 35mm 胶片写的，那时颗粒掩盖了很多问题。在 4500 万像素传感器上放大到 100% 看，它就是错的，常常错一倍，因为它完全不知道像素间距。NPF 法则由勒阿弗尔天文学会的 Frédéric Michaud 提出，通过引入光圈和单个感光点的物理尺寸修正了这个问题。">The 500 rule — divide 500 by your equivalent focal length — was written for 35 mm film, where grain hid a lot. On a 45 MP sensor examined at 100 % it is simply wrong, often by a factor of two, because it knows nothing about pixel pitch. The NPF rule, published by Frédéric Michaud of the Société Astronomique du Havre, fixes that by folding in aperture and the physical size of one photosite.</p><p data-en="Stoplume computes both and shows them together so you can see the gap for your own body. It also applies the declination correction that both rules usually skip: stars near the celestial pole barely move, stars on the celestial equator move at the full 15.041 arcseconds per second, so a Polaris-side composition tolerates a much longer exposure than the same lens pointed at Orion." data-zh="Stoplume 同时算出两者并排显示，让你看清自己这台机身上的差距。它还加入了两条法则通常都跳过的赤纬修正：靠近天极的恒星几乎不动，天赤道上的恒星以完整的每秒 15.041 角秒移动——所以对着北极星方向构图能容忍的曝光时间，比同一支镜头对着猎户座长得多。">Stoplume computes both and shows them together so you can see the gap for your own body. It also applies the declination correction that both rules usually skip: stars near the celestial pole barely move, stars on the celestial equator move at the full 15.041 arcseconds per second, so a Polaris-side composition tolerates a much longer exposure than the same lens pointed at Orion.</p><p data-en="Rather than asking you to trust a formula, the calculator inverts the problem. It converts your sensor and focal length into arcseconds per pixel, then reports how many pixels a star will smear across at any shutter speed you type in, and the exact exposure that keeps the smear under one pixel and under two. That is a number you can verify against your own files." data-zh="与其让你相信某个公式，这个计算器把问题反过来：它把你的传感器和焦距换算成「每像素多少角秒」，然后告诉你输入的任意快门下星点会拖过多少个像素，以及把拖线控制在 1 像素和 2 像素以内的精确曝光时间。这是你可以拿自己的文件去验证的数字。">Rather than asking you to trust a formula, the calculator inverts the problem. It converts your sensor and focal length into arcseconds per pixel, then reports how many pixels a star will smear across at any shutter speed you type in, and the exact exposure that keeps the smear under one pixel and under two. That is a number you can verify against your own files.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Which rule should I trust?" data-zh="该信哪条法则？">Which rule should I trust?</summary><p data-en="Use NPF for anything you will print or view at 100 %, and treat the 500 rule as a rough field fallback. The two agree only by coincidence on low-resolution full-frame bodies at moderate focal lengths." data-zh="凡是要出片或 100% 查看的，用 NPF；500 法则只当作现场的粗略兜底。两者只在低像素全画幅配中等焦距时才碰巧接近。">Use NPF for anything you will print or view at 100 %, and treat the 500 rule as a rough field fallback. The two agree only by coincidence on low-resolution full-frame bodies at moderate focal lengths.</p></details><details class="faq-item"><summary data-en="Why does declination matter?" data-zh="赤纬为什么重要？">Why does declination matter?</summary><p data-en="Apparent star speed is proportional to the cosine of declination. At δ = 60° stars drift at half the equatorial rate, so you can double the exposure for the same trail length — a real, measurable gain, not a rounding trick." data-zh="恒星视运动速度正比于赤纬的余弦。δ = 60° 时漂移速度只有天赤道的一半，同样的拖线长度可以曝光加倍——这是真实可测的收益，不是四舍五入的把戏。">Apparent star speed is proportional to the cosine of declination. At δ = 60° stars drift at half the equatorial rate, so you can double the exposure for the same trail length — a real, measurable gain, not a rounding trick.</p></details><details class="faq-item"><summary data-en="Does a star tracker make this irrelevant?" data-zh="用赤道仪就不用管这些了吗？">Does a star tracker make this irrelevant?</summary><p data-en="It changes the question. With a tracker your limit becomes polar-alignment error and periodic error rather than Earth&#x27;s rotation, but these numbers still tell you what an untracked frame in the same set can afford — useful when you shoot a tracked sky and an untracked foreground." data-zh="问题会变。用了跟踪后，限制变成极轴校准误差和周期误差，而不是地球自转；但这些数字仍然告诉你同一组里未跟踪的那张能撑多久——拍「跟踪天空 + 静止前景」时很有用。">It changes the question. With a tracker your limit becomes polar-alignment error and periodic error rather than Earth&#x27;s rotation, but these numbers still tell you what an untracked frame in the same set can afford — useful when you shoot a tracked sky and an untracked foreground.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Sidereal_time" target="_blank" rel="noopener nofollow">Sidereal time (15.041″/s rotation rate) — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Declination" target="_blank" rel="noopener nofollow">Declination — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
