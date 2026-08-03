@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Exposure Triangle &amp; EV Solver — free &amp; bilingual | Stoplume" data-zh="曝光三角与 EV 求解器 — 免费中英双语 | Stoplume">Exposure Triangle &amp; EV Solver — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Solve any missing setting, convert to EV, and list every equivalent exposure." data-en="Solve any missing setting, convert to EV, and list every equivalent exposure." data-zh="求解任一缺失参数、换算 EV，并列出所有等效曝光组合。">
+<meta name="keywords" content="exposure value calculator, EV chart, exposure triangle, equivalent exposure, sunny 16 rule">
+<link rel="canonical" href="https://stoplume.com/tools/exposure-value-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/exposure-value-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/exposure-value-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/exposure-value-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Exposure Triangle &amp; EV Solver — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Solve any missing setting, convert to EV, and list every equivalent exposure.">
+<meta property="og:url" content="https://stoplume.com/tools/exposure-value-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Exposure Triangle & EV Solver",
+   "url": "https://stoplume.com/tools/exposure-value-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Solve any missing setting, convert to EV, and list every equivalent exposure.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Exposure Triangle & EV Solver",
+     "item": "https://stoplume.com/tools/exposure-value-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does changing ISO change the exposure?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It changes the brightness of the file, not the amount of light the lens delivered. EV as used here describes scene luminance at ISO 100; raising ISO lets you use a smaller aperture or faster shutter for the same output brightness, at the cost of noise."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does my camera show 1/8000 but the calculator says 1/6400?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Standard shutter values are rounded powers of two (1/8000 is really 1/8192). Stoplume prints the exact computed time and then the nearest full, half and third stop setting your camera can actually dial in."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Sunny 16 still accurate with digital cameras?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes — it describes the light, not the medium. On a clear day with the sun over your shoulder, f/16 with shutter ≈ 1/ISO lands within about half a stop, which is well inside raw headroom."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-exp" data-tool="exp">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">△</span>
+    <div>
+      <h1 data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</h1>
+      <p class="panel-sub" data-en="Solve any missing setting, convert to EV, and list every equivalent exposure." data-zh="求解任一缺失参数、换算 EV，并列出所有等效曝光组合。">Solve any missing setting, convert to EV, and list every equivalent exposure.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field"><label for="exp-solve" data-en="Solve for" data-zh="求解">Solve for</label><select id="exp-solve"><option value="shutter" selected data-en="Shutter speed" data-zh="快门速度">Shutter speed</option><option value="aperture" data-en="Aperture" data-zh="光圈">Aperture</option><option value="iso" data-en="ISO" data-zh="ISO">ISO</option><option value="ev" data-en="Exposure value (EV)" data-zh="曝光值 EV">Exposure value (EV)</option></select></div><div class="field"><label for="exp-ev" data-en="Scene EV (at ISO 100)" data-zh="场景 EV（ISO 100）">Scene EV (at ISO 100)</label><input type="number" id="exp-ev" value="15" min="-8" max="22" step="0.1" inputmode="decimal"></div><div class="field"><label for="exp-scene" data-en="Reference scene" data-zh="参考场景">Reference scene</label><select id="exp-scene"><option value="" selected data-en="— pick to fill EV —" data-zh="— 选择以填入 EV —">— pick to fill EV —</option><option value="15" data-en="Sunny 16: bright sun, distinct shadows — EV 15" data-zh="阳光十六法：晴天硬影 — EV 15">Sunny 16: bright sun, distinct shadows — EV 15</option><option value="14" data-en="Slight overcast, soft shadows — EV 14" data-zh="薄云，柔和阴影 — EV 14">Slight overcast, soft shadows — EV 14</option><option value="13" data-en="Overcast, no shadows — EV 13" data-zh="阴天无影 — EV 13">Overcast, no shadows — EV 13</option><option value="12" data-en="Heavy overcast / open shade — EV 12" data-zh="厚云 / 阴影处 — EV 12">Heavy overcast / open shade — EV 12</option><option value="9" data-en="Bright street at night, shop windows — EV 9" data-zh="夜间明亮街道、橱窗 — EV 9">Bright street at night, shop windows — EV 9</option><option value="7" data-en="Bright interior, home at night — EV 7" data-zh="室内明亮、夜间家居 — EV 7">Bright interior, home at night — EV 7</option><option value="5" data-en="Dim interior, candlelit close-up — EV 5" data-zh="昏暗室内、烛光特写 — EV 5">Dim interior, candlelit close-up — EV 5</option><option value="-4" data-en="Full moon landscape — EV −4" data-zh="满月风景 — EV −4">Full moon landscape — EV −4</option><option value="-6" data-en="Milky Way, no moon — EV −6" data-zh="无月银河 — EV −6">Milky Way, no moon — EV −6</option></select></div><div class="field"><label for="exp-aperture" data-en="Aperture f/" data-zh="光圈 f/">Aperture f/</label><input type="number" id="exp-aperture" value="8" min="0.7" max="64" step="0.1" inputmode="decimal"></div><div class="field"><label for="exp-shutter" data-en="Shutter speed" data-zh="快门速度">Shutter speed</label><input type="text" id="exp-shutter" value="1/250" autocomplete="off"><small class="hint" data-en="Type a shutter speed as 1/250, 0.5 or 30s." data-zh="快门可输入 1/250、0.5 或 30s 等格式。">Type a shutter speed as 1/250, 0.5 or 30s.</small></div><div class="field"><label for="exp-iso" data-en="ISO" data-zh="ISO">ISO</label><input type="number" id="exp-iso" value="100" min="6" max="409600" step="1" inputmode="decimal"></div><div class="field"><label for="exp-comp" data-en="Exposure compensation (stops)" data-zh="曝光补偿（档）">Exposure compensation (stops)</label><input type="number" id="exp-comp" value="0" min="-6" max="6" step="0.3333333333333333" inputmode="decimal"></div></form>
+    <div class="outputs">
+      <div class="results" id="exp-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="exp-svg"></div>
+        <figcaption class="viz-cap" id="exp-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>EV<sub>100</sub> = log₂(N² / t)    ·    EV<sub>ISO</sub> = EV<sub>100</sub> + log₂(ISO / 100)<br>Every ±1 EV is one stop: halve or double the light.</code></div>
+  <div class="explain"><p data-en="Exposure value collapses aperture and shutter into a single number, so that all the combinations that admit the same amount of light land on the same EV. That is the whole trick behind the exposure triangle: f/8 at 1/250 s, f/5.6 at 1/500 s and f/11 at 1/125 s are one exposure wearing three different costumes — identical brightness, completely different depth of field and motion rendering." data-zh="曝光值把光圈和快门压缩成一个数字，于是所有进光量相同的组合都落在同一个 EV 上。这就是曝光三角的全部秘密：f/8 + 1/250 s、f/5.6 + 1/500 s、f/11 + 1/125 s 是同一次曝光的三套衣服——亮度完全一样，景深和运动表现却截然不同。">Exposure value collapses aperture and shutter into a single number, so that all the combinations that admit the same amount of light land on the same EV. That is the whole trick behind the exposure triangle: f/8 at 1/250 s, f/5.6 at 1/500 s and f/11 at 1/125 s are one exposure wearing three different costumes — identical brightness, completely different depth of field and motion rendering.</p><p data-en="This solver works in both directions. Give it any three of aperture, shutter, ISO and scene EV and it returns the fourth, applies your exposure compensation in thirds of a stop, snaps the answer to the nearest standard setting, and prints the full ladder of equivalent exposures so you can pick the trade-off you actually want." data-zh="这个求解器是双向的。给它光圈、快门、ISO、场景 EV 中的任意三个，它返回第四个，按 1/3 档应用你的曝光补偿，把结果吸附到最近的标准档位，并列出完整的等效曝光阶梯，让你自己挑想要的取舍。">This solver works in both directions. Give it any three of aperture, shutter, ISO and scene EV and it returns the fourth, applies your exposure compensation in thirds of a stop, snaps the answer to the nearest standard setting, and prints the full ladder of equivalent exposures so you can pick the trade-off you actually want.</p><p data-en="The reference scene list uses the classical EV values photographers have used since hand-held meters: Sunny 16 is EV 15 at ISO 100, an overcast day is EV 12–13, a moonless Milky Way sky sits near EV −6. Those are starting points for a meterless estimate, not a substitute for metering the scene in front of you." data-zh="参考场景用的是测光表时代以来摄影师沿用的经典 EV 值：阳光十六法在 ISO 100 下是 EV 15，阴天约 EV 12–13，无月银河大约 EV −6。这些是没有测光表时的起点估算，不能替代对眼前场景的实际测光。">The reference scene list uses the classical EV values photographers have used since hand-held meters: Sunny 16 is EV 15 at ISO 100, an overcast day is EV 12–13, a moonless Milky Way sky sits near EV −6. Those are starting points for a meterless estimate, not a substitute for metering the scene in front of you.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Does changing ISO change the exposure?" data-zh="改 ISO 算改变曝光吗？">Does changing ISO change the exposure?</summary><p data-en="It changes the brightness of the file, not the amount of light the lens delivered. EV as used here describes scene luminance at ISO 100; raising ISO lets you use a smaller aperture or faster shutter for the same output brightness, at the cost of noise." data-zh="它改变的是文件的明度，而不是镜头送进来的光量。这里的 EV 描述的是 ISO 100 下的场景亮度；提高 ISO 让你在同样输出亮度下用更小光圈或更快快门，代价是噪点。">It changes the brightness of the file, not the amount of light the lens delivered. EV as used here describes scene luminance at ISO 100; raising ISO lets you use a smaller aperture or faster shutter for the same output brightness, at the cost of noise.</p></details><details class="faq-item"><summary data-en="Why does my camera show 1/8000 but the calculator says 1/6400?" data-zh="为什么相机是 1/8000，计算器给 1/6400？">Why does my camera show 1/8000 but the calculator says 1/6400?</summary><p data-en="Standard shutter values are rounded powers of two (1/8000 is really 1/8192). Stoplume prints the exact computed time and then the nearest full, half and third stop setting your camera can actually dial in." data-zh="标准快门刻度是被取整的 2 的幂（1/8000 实际是 1/8192）。Stoplume 会先给出精确计算时间，再给出相机上真正能拨到的整档、半档和 1/3 档设置。">Standard shutter values are rounded powers of two (1/8000 is really 1/8192). Stoplume prints the exact computed time and then the nearest full, half and third stop setting your camera can actually dial in.</p></details><details class="faq-item"><summary data-en="Is Sunny 16 still accurate with digital cameras?" data-zh="阳光十六法对数码相机还准吗？">Is Sunny 16 still accurate with digital cameras?</summary><p data-en="Yes — it describes the light, not the medium. On a clear day with the sun over your shoulder, f/16 with shutter ≈ 1/ISO lands within about half a stop, which is well inside raw headroom." data-zh="准——它描述的是光线，不是介质。晴天顺光时，f/16 配 ≈ 1/ISO 的快门，误差通常在半档以内，完全在 RAW 宽容度之内。">Yes — it describes the light, not the medium. On a clear day with the sun over your shoulder, f/16 with shutter ≈ 1/ISO lands within about half a stop, which is well inside raw headroom.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Exposure_value" target="_blank" rel="noopener nofollow">Exposure value — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Sunny_16_rule" target="_blank" rel="noopener nofollow">Sunny 16 rule — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
