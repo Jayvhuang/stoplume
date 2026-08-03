@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Flash Guide Number &amp; Inverse Square — free &amp; bilingual | Stoplume" data-zh="闪光指数与平方反比 — 免费中英双语 | Stoplume">Flash Guide Number &amp; Inverse Square — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Aperture from guide number, and how fast light dies as your subject steps back." data-en="Aperture from guide number, and how fast light dies as your subject steps back." data-zh="由闪光指数求光圈，以及主体后退时光线衰减得有多快。">
+<meta name="keywords" content="guide number calculator, flash exposure calculator, inverse square law photography, lighting ratio calculator">
+<link rel="canonical" href="https://stoplume.com/tools/flash-guide-number-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/flash-guide-number-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/flash-guide-number-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/flash-guide-number-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flash Guide Number &amp; Inverse Square — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Aperture from guide number, and how fast light dies as your subject steps back.">
+<meta property="og:url" content="https://stoplume.com/tools/flash-guide-number-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Flash Guide Number & Inverse Square",
+   "url": "https://stoplume.com/tools/flash-guide-number-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Aperture from guide number, and how fast light dies as your subject steps back.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Flash Guide Number & Inverse Square",
+     "item": "https://stoplume.com/tools/flash-guide-number-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does shutter speed affect flash exposure?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not for the flash itself, as long as you stay at or below sync speed — the burst is far shorter than the exposure. Shutter speed controls the ambient light only, which is precisely how you balance flash against daylight."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why is my real-world exposure darker than the guide number predicts?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Guide numbers are quoted at a specific zoom head position, usually in a small reflective room, and often optimistically. Any modifier costs light: a shoot-through umbrella typically eats one to two stops. Treat the result as a starting point and meter."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the inverse square law apply to softboxes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It applies exactly to point sources and approximately to any source once you are several source-widths away. Very close to a large softbox the falloff is gentler than 1/d², which is why big modifiers used close give such even light across a group."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-flash" data-tool="flash">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">⚡</span>
+    <div>
+      <h1 data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</h1>
+      <p class="panel-sub" data-en="Aperture from guide number, and how fast light dies as your subject steps back." data-zh="由闪光指数求光圈，以及主体后退时光线衰减得有多快。">Aperture from guide number, and how fast light dies as your subject steps back.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field"><label for="flash-mode" data-en="Solve for" data-zh="求解">Solve for</label><select id="flash-mode"><option value="aperture" selected data-en="Aperture" data-zh="光圈">Aperture</option><option value="distance" data-en="Flash-to-subject distance" data-zh="闪光灯到主体距离">Flash-to-subject distance</option><option value="gn" data-en="Guide number" data-zh="闪光指数">Guide number</option></select></div><div class="field"><label for="flash-gn" data-en="Guide number (m, ISO 100)" data-zh="闪光指数（m，ISO 100）">Guide number (m, ISO 100)</label><input type="number" id="flash-gn" value="36" min="1" max="200" step="0.1" inputmode="decimal"></div><div class="field"><label for="flash-distance" data-en="Distance (m)" data-zh="距离（m）">Distance (m)</label><input type="number" id="flash-distance" value="3" min="0.1" max="100" step="0.01" inputmode="decimal"></div><div class="field"><label for="flash-aperture" data-en="Aperture f/" data-zh="光圈 f/">Aperture f/</label><input type="number" id="flash-aperture" value="8" min="0.7" max="64" step="0.1" inputmode="decimal"></div><div class="field"><label for="flash-iso" data-en="Shooting ISO" data-zh="拍摄 ISO">Shooting ISO</label><input type="number" id="flash-iso" value="100" min="6" max="409600" step="1" inputmode="decimal"></div><div class="field"><label for="flash-power" data-en="Flash power" data-zh="闪光输出">Flash power</label><select id="flash-power"><option value="1" selected data-en="Full (1/1)" data-zh="全功率 1/1">Full (1/1)</option><option value="0.5" data-en="1/2" data-zh="1/2">1/2</option><option value="0.25" data-en="1/4" data-zh="1/4">1/4</option><option value="0.125" data-en="1/8" data-zh="1/8">1/8</option><option value="0.0625" data-en="1/16" data-zh="1/16">1/16</option><option value="0.03125" data-en="1/32" data-zh="1/32">1/32</option><option value="0.015625" data-en="1/64" data-zh="1/64">1/64</option><option value="0.0078125" data-en="1/128" data-zh="1/128">1/128</option></select></div><div class="field"><label for="flash-second" data-en="Second subject distance (m)" data-zh="第二个主体的距离（m）">Second subject distance (m)</label><input type="number" id="flash-second" value="4.5" min="0.1" max="100" step="0.01" inputmode="decimal"></div></form>
+    <div class="outputs">
+      <div class="results" id="flash-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="flash-svg"></div>
+        <figcaption class="viz-cap" id="flash-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>GN = N × d (at ISO 100)    ·    N = GN √(ISO/100) √power / d<br>Illuminance E ∝ 1 / d²    ·    stop difference = 2 · log₂(d₂ / d₁)</code></div>
+  <div class="explain"><p data-en="Flash exposure obeys one equation with three terms. The guide number is the manufacturer&#x27;s shorthand for how much light the head puts out at ISO 100: divide it by the flash-to-subject distance and you have the aperture that will expose correctly. Rearranged, the same relation tells you how far to place the light or what guide number a scene demands." data-zh="闪光曝光遵循一条三项的等式。闪光指数是厂商对「ISO 100 下这只灯有多亮」的简写：用它除以灯到主体的距离，就得到正确曝光的光圈。把式子调换一下，同样的关系告诉你灯该放多远，或者这个场景需要多大的闪光指数。">Flash exposure obeys one equation with three terms. The guide number is the manufacturer's shorthand for how much light the head puts out at ISO 100: divide it by the flash-to-subject distance and you have the aperture that will expose correctly. Rearranged, the same relation tells you how far to place the light or what guide number a scene demands.</p><p data-en="The inverse square law is the part that surprises people on set. Light does not fade gently — brightness falls with the square of distance, so a subject at 4.5 m from a light that correctly exposes at 3 m is more than a stop dark. Stoplume prints a falloff table and draws the curve, and computes the lighting ratio between two subjects standing at different distances from the same head." data-zh="在现场让人吃惊的是平方反比定律。光不是温柔地衰减——亮度按距离的平方下降，所以一只在 3 m 处正确曝光的灯，主体退到 4.5 m 就暗了一档多。Stoplume 会打印衰减表、画出曲线，并计算同一只灯下站在不同距离的两个主体之间的光比。">The inverse square law is the part that surprises people on set. Light does not fade gently — brightness falls with the square of distance, so a subject at 4.5 m from a light that correctly exposes at 3 m is more than a stop dark. Stoplume prints a falloff table and draws the curve, and computes the lighting ratio between two subjects standing at different distances from the same head.</p><p data-en="That curve is also a creative tool. Close to the light, the falloff between a subject&#x27;s nose and their shoulder is steep, so the background goes black; move the light back and the same scene turns even and flat. Knowing where you sit on the curve is the difference between guessing at test frames and placing a light on purpose." data-zh="这条曲线同时是创作工具。离灯很近时，主体鼻尖与肩膀之间的衰减极陡，背景直接掉黑；把灯拉远，同一个场景就变得均匀而平淡。知道自己处在曲线的哪一段，是「靠试拍碰运气」和「有意识地布光」之间的区别。">That curve is also a creative tool. Close to the light, the falloff between a subject's nose and their shoulder is steep, so the background goes black; move the light back and the same scene turns even and flat. Knowing where you sit on the curve is the difference between guessing at test frames and placing a light on purpose.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Does shutter speed affect flash exposure?" data-zh="快门速度影响闪光曝光吗？">Does shutter speed affect flash exposure?</summary><p data-en="Not for the flash itself, as long as you stay at or below sync speed — the burst is far shorter than the exposure. Shutter speed controls the ambient light only, which is precisely how you balance flash against daylight." data-zh="只要不超过同步速度，就不影响闪光本身——闪光持续时间远短于曝光时间。快门只控制环境光，这正是你平衡闪光与日光的手段。">Not for the flash itself, as long as you stay at or below sync speed — the burst is far shorter than the exposure. Shutter speed controls the ambient light only, which is precisely how you balance flash against daylight.</p></details><details class="faq-item"><summary data-en="Why is my real-world exposure darker than the guide number predicts?" data-zh="为什么实拍比闪光指数算出来的暗？">Why is my real-world exposure darker than the guide number predicts?</summary><p data-en="Guide numbers are quoted at a specific zoom head position, usually in a small reflective room, and often optimistically. Any modifier costs light: a shoot-through umbrella typically eats one to two stops. Treat the result as a starting point and meter." data-zh="闪光指数是在特定变焦头位置、通常在反光良好的小房间里测的，而且往往偏乐观。任何附件都吃光：透射伞一般要吃掉 1–2 档。把结果当起点，然后测光。">Guide numbers are quoted at a specific zoom head position, usually in a small reflective room, and often optimistically. Any modifier costs light: a shoot-through umbrella typically eats one to two stops. Treat the result as a starting point and meter.</p></details><details class="faq-item"><summary data-en="Does the inverse square law apply to softboxes?" data-zh="柔光箱也遵守平方反比吗？">Does the inverse square law apply to softboxes?</summary><p data-en="It applies exactly to point sources and approximately to any source once you are several source-widths away. Very close to a large softbox the falloff is gentler than 1/d², which is why big modifiers used close give such even light across a group." data-zh="对点光源严格成立；一旦距离超过光源尺寸的几倍，对任何光源都近似成立。紧贴大柔光箱时衰减比 1/d² 平缓，这正是大附件近距离能把一群人打得很均匀的原因。">It applies exactly to point sources and approximately to any source once you are several source-widths away. Very close to a large softbox the falloff is gentler than 1/d², which is why big modifiers used close give such even light across a group.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Guide_number" target="_blank" rel="noopener nofollow">Guide number — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Inverse-square_law" target="_blank" rel="noopener nofollow">Inverse-square law — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
