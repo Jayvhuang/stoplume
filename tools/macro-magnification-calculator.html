@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Macro Magnification &amp; Effective Aperture — free &amp; bilingual | Stoplume" data-zh="微距放大倍率与有效光圈 — 免费中英双语 | Stoplume">Macro Magnification &amp; Effective Aperture — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get." data-en="Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get." data-zh="接圈、放大倍率、皮腔因数，以及你真正得到的那点景深。">
+<meta name="keywords" content="macro magnification calculator, extension tube calculator, effective aperture macro, bellows factor, reproduction ratio">
+<link rel="canonical" href="https://stoplume.com/tools/macro-magnification-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/macro-magnification-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/macro-magnification-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/macro-magnification-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Macro Magnification &amp; Effective Aperture — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get.">
+<meta property="og:url" content="https://stoplume.com/tools/macro-magnification-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Macro Magnification & Effective Aperture",
+   "url": "https://stoplume.com/tools/macro-magnification-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Macro Magnification & Effective Aperture",
+     "item": "https://stoplume.com/tools/macro-magnification-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How much magnification does an extension tube add?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Extension divided by focal length. A 25 mm tube on a 50 mm lens adds 0.5×; the same tube on a 200 mm lens adds only 0.125×. Tubes are therefore far more effective on short lenses, at the cost of a very short working distance."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is pupil magnification and where do I find it?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is the ratio of exit to entrance pupil diameter. Symmetric lenses are near 1, telephoto designs are below 1 and retrofocus wide-angles above 1. Most manufacturers do not publish it; leaving it at 1 is the standard assumption and is accurate for typical macro primes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why is my macro shot soft even though focus looks right?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually effective-aperture diffraction, subject motion, or depth of field thinner than the subject. Check the effective aperture here first: if it is past f/16 equivalent on your format, open up a stop and stack frames instead."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-macro" data-tool="macro">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">❖</span>
+    <div>
+      <h1 data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</h1>
+      <p class="panel-sub" data-en="Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get." data-zh="接圈、放大倍率、皮腔因数，以及你真正得到的那点景深。">Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field field-cam"><label for="macro-sensor" data-en="Sensor format" data-zh="画幅">Sensor format</label><div class="camchip" data-camchip="1"><span class="camchip-name">Full Frame 36 × 24</span><a class="camchip-edit" href="#camera" data-en="change" data-zh="更改">change</a></div><small class="hint" data-en="Shared camera profile — set it once, every tool follows." data-zh="全站共用的相机档案——设置一次，所有工具同步。">Shared camera profile — set it once, every tool follows.</small></div><div class="field"><label for="macro-focal" data-en="Focal length (mm)" data-zh="焦距（mm）">Focal length (mm)</label><input type="number" id="macro-focal" value="100" min="1" max="1000" step="0.1" inputmode="decimal"></div><div class="field"><label for="macro-mlens" data-en="Lens native magnification (×)" data-zh="镜头自身放大倍率（×）">Lens native magnification (×)</label><input type="number" id="macro-mlens" value="1.0" min="0" max="10" step="0.01" inputmode="decimal"></div><div class="field"><label for="macro-ext" data-en="Extension tube (mm)" data-zh="接圈长度（mm）">Extension tube (mm)</label><input type="number" id="macro-ext" value="0" min="0" max="300" step="1" inputmode="decimal"></div><div class="field"><label for="macro-aperture" data-en="Set aperture f/" data-zh="设定光圈 f/">Set aperture f/</label><input type="number" id="macro-aperture" value="8" min="0.7" max="64" step="0.1" inputmode="decimal"></div><div class="field"><label for="macro-pupil" data-en="Pupil magnification" data-zh="光瞳倍率">Pupil magnification</label><input type="number" id="macro-pupil" value="1" min="0.1" max="5" step="0.05" inputmode="decimal"></div><div class="field"><label for="macro-coc" data-en="Circle of confusion (mm)" data-zh="弥散圆（mm）">Circle of confusion (mm)</label><input type="number" id="macro-coc" value="0.03" min="0.001" max="0.2" step="0.001" inputmode="decimal"></div></form>
+    <div class="outputs">
+      <div class="results" id="macro-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="macro-svg"></div>
+        <figcaption class="viz-cap" id="macro-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>m<sub>total</sub> = m<sub>lens</sub> + extension / f    ·    N<sub>eff</sub> = N (1 + m / p)<br>exposure compensation = 2 log₂(1 + m / p) stops    ·    DoF ≈ 2 N c (1 + m/p) / m²</code></div>
+  <div class="explain"><p data-en="At normal distances a lens behaves like a simple projector and the f-number printed on the barrel is the aperture the light actually sees. In macro that stops being true. As you rack the lens forward the exit pupil moves further from the sensor, the cone of light spreads over a longer throw, and the &lt;strong&gt;effective aperture&lt;/strong&gt; becomes N(1 + m/p) — at 1:1 with a symmetric lens, a marked f/8 is really f/16." data-zh="在常规距离上，镜头像一台简单的投影仪，镜身上印的 f 值就是光线实际看到的光圈。到了微距，这不再成立。随着镜组前伸，出瞳离传感器越来越远，光锥要跑更长的距离，&lt;strong&gt;有效光圈&lt;/strong&gt;变成 N(1 + m/p)——对称结构镜头在 1:1 时，标称 f/8 实际是 f/16。">At normal distances a lens behaves like a simple projector and the f-number printed on the barrel is the aperture the light actually sees. In macro that stops being true. As you rack the lens forward the exit pupil moves further from the sensor, the cone of light spreads over a longer throw, and the <strong>effective aperture</strong> becomes N(1 + m/p) — at 1:1 with a symmetric lens, a marked f/8 is really f/16.</p><p data-en="Two consequences follow immediately. First, you lose light: two stops at 1:1, which is why a metered flash setting or an ambient reading taken at infinity comes out dark. Cameras metering through the lens absorb this automatically, but manual flash calculations do not, so Stoplume prints the bellows compensation in stops." data-zh="由此立刻带来两个后果。第一，你损失了光：1:1 时是两档，这就是为什么按无穷远测得的闪光设置或环境读数拍出来偏暗。TTL 测光会自动吸收这部分，手动闪光计算不会，所以 Stoplume 会把皮腔补偿按档数打印出来。">Two consequences follow immediately. First, you lose light: two stops at 1:1, which is why a metered flash setting or an ambient reading taken at infinity comes out dark. Cameras metering through the lens absorb this automatically, but manual flash calculations do not, so Stoplume prints the bellows compensation in stops.</p><p data-en="Second, diffraction arrives far earlier than you expect, because the Airy disk is set by the effective aperture, not the marked one. Macro depth of field is measured in millimetres and the temptation is to stop down to f/22 — where an effective f/44 has already destroyed more detail than the extra depth recovers. Stoplume shows magnification, working distance, the subject area covered by your sensor, effective aperture, exposure compensation and depth of field at once, so the trade-off is visible before you commit to a focus stack." data-zh="第二，衍射来得比你预期早得多，因为艾里斑由有效光圈决定，而不是标称光圈。微距景深以毫米计，人很容易忍不住收到 f/22——而此时有效 f/44 摧毁的细节，已经多过多出来的那点景深。Stoplume 同时给出放大倍率、工作距离、传感器覆盖的实际被摄面积、有效光圈、曝光补偿和景深，让你在决定要不要景深合成之前就看清这笔账。">Second, diffraction arrives far earlier than you expect, because the Airy disk is set by the effective aperture, not the marked one. Macro depth of field is measured in millimetres and the temptation is to stop down to f/22 — where an effective f/44 has already destroyed more detail than the extra depth recovers. Stoplume shows magnification, working distance, the subject area covered by your sensor, effective aperture, exposure compensation and depth of field at once, so the trade-off is visible before you commit to a focus stack.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="How much magnification does an extension tube add?" data-zh="接圈能加多少放大倍率？">How much magnification does an extension tube add?</summary><p data-en="Extension divided by focal length. A 25 mm tube on a 50 mm lens adds 0.5×; the same tube on a 200 mm lens adds only 0.125×. Tubes are therefore far more effective on short lenses, at the cost of a very short working distance." data-zh="接圈长度除以焦距。50mm 镜头加 25mm 接圈增加 0.5×；同样的接圈装在 200mm 上只增加 0.125×。所以接圈在短焦上效果好得多，代价是工作距离极短。">Extension divided by focal length. A 25 mm tube on a 50 mm lens adds 0.5×; the same tube on a 200 mm lens adds only 0.125×. Tubes are therefore far more effective on short lenses, at the cost of a very short working distance.</p></details><details class="faq-item"><summary data-en="What is pupil magnification and where do I find it?" data-zh="光瞳倍率是什么，去哪儿查？">What is pupil magnification and where do I find it?</summary><p data-en="It is the ratio of exit to entrance pupil diameter. Symmetric lenses are near 1, telephoto designs are below 1 and retrofocus wide-angles above 1. Most manufacturers do not publish it; leaving it at 1 is the standard assumption and is accurate for typical macro primes." data-zh="它是出瞳与入瞳直径之比。对称结构接近 1，长焦结构小于 1，反远距广角大于 1。多数厂商不公布这个值；保留 1 是标准假设，对典型微距定焦是准确的。">It is the ratio of exit to entrance pupil diameter. Symmetric lenses are near 1, telephoto designs are below 1 and retrofocus wide-angles above 1. Most manufacturers do not publish it; leaving it at 1 is the standard assumption and is accurate for typical macro primes.</p></details><details class="faq-item"><summary data-en="Why is my macro shot soft even though focus looks right?" data-zh="对焦看着没问题，微距为什么还是肉？">Why is my macro shot soft even though focus looks right?</summary><p data-en="Usually effective-aperture diffraction, subject motion, or depth of field thinner than the subject. Check the effective aperture here first: if it is past f/16 equivalent on your format, open up a stop and stack frames instead." data-zh="通常是有效光圈带来的衍射、被摄体轻微移动，或者景深比主体还薄。先看这里的有效光圈：如果已经超过你画幅上的等效 f/16，就开大一档改用景深合成。">Usually effective-aperture diffraction, subject motion, or depth of field thinner than the subject. Check the effective aperture here first: if it is past f/16 equivalent on your format, open up a stop and stack frames instead.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/F-number" target="_blank" rel="noopener nofollow">f-number: effective aperture — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Macro_photography" target="_blank" rel="noopener nofollow">Macro photography — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="depth-of-field-calculator.html" data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</a><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
