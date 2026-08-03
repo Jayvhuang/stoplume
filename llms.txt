@@ -1,0 +1,40 @@
+# Stoplume
+
+> See the light before you shoot. Stoplume is a free, bilingual (English / 简体中文), account-free set of ten client-side photography
+> optics calculators. All computation happens in the visitor's browser; no inputs, coordinates or images are
+> uploaded. Distinctive feature: depth of field is reported together with diffraction (Airy disk, diffraction-limited
+> aperture, combined-blur optimum) and the circle-of-confusion criterion is user-selectable, including a
+> pixel-pitch-based criterion.
+
+## Calculators
+- [Depth of Field & Diffraction](https://stoplume.com/tools/depth-of-field-calculator.html): Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore. Formula basis: H = f² / (N · c) + f    ·    D_n = s(H − f) / (H + s − 2f)    ·    D_f = s(H − f) / (H − s) | Airy disk ⌀ = 2.44 · λ · N (λ = 550 nm)    ·    Total blur = √(defocus² + diffraction²)
+- [Exposure Triangle & EV Solver](https://stoplume.com/tools/exposure-value-calculator.html): Solve any missing setting, convert to EV, and list every equivalent exposure. Formula basis: EV_100 = log₂(N² / t)    ·    EV_ISO = EV_100 + log₂(ISO / 100) | Every ±1 EV is one stop: halve or double the light.
+- [Crop Factor & Full-Frame Equivalence](https://stoplume.com/tools/crop-factor-equivalence.html): Equivalent focal length, equivalent aperture and equivalent ISO between any two formats. Formula basis: crop = 43.267 mm / sensor diagonal    ·    f_eq = f × (crop_to→from) | N_eq = N × ratio (depth of field &amp; total light)    ·    ISO_eq = ISO × ratio²
+- [Field of View & Framing Distance](https://stoplume.com/tools/field-of-view-calculator.html): Angle of view, frame size at any distance, and how far back to stand for your subject. Formula basis: AoV = 2 · arctan(d / 2f)    ·    frame size = distance × sensor size / f | magnification m = f / (s − f)    ·    required distance s = f (1 + 1/m)
+- [Astro Shutter — NPF vs 500 Rule](https://stoplume.com/tools/astrophotography-shutter-calculator.html): Longest exposure before stars trail, computed from your pixel pitch — not a folk rule. Formula basis: NPF t = k · (35 N + 30 p) / (f · cos δ)   (p = pixel pitch in µm) | 500 rule t = 500 / (f × crop)    ·    drift = 15.041″/s × cos δ    ·    arcsec per pixel = 206265 · p / (1000 f)
+- [ND Filter & Long Exposure](https://stoplume.com/tools/nd-filter-calculator.html): Stops, optical density and the exact bulb time — in both directions. Formula basis: t_ND = t_metered × 2<sup>stops</sup>    ·    optical density D = stops × 0.30103    ·    ND factor = 2<sup>stops</sup> | stops needed = log₂(t_target / t_metered)
+- [Flash Guide Number & Inverse Square](https://stoplume.com/tools/flash-guide-number-calculator.html): Aperture from guide number, and how fast light dies as your subject steps back. Formula basis: GN = N × d (at ISO 100)    ·    N = GN √(ISO/100) √power / d | Illuminance E ∝ 1 / d²    ·    stop difference = 2 · log₂(d₂ / d₁)
+- [Golden Hour & Sun Position](https://stoplume.com/tools/golden-hour-calculator.html): Sunrise, sunset, golden and blue hour for any place and date — computed offline. Formula basis: NOAA solar position algorithm — Julian day → geometric mean longitude → equation of centre → apparent longitude → declination and equation of time → hour angle at target elevation. | Golden hour: sun elevation −4° … +6°    ·    Blue hour: −6° … −4°    ·    Civil twilight: −6°
+- [Time-lapse Interval Planner](https://stoplume.com/tools/time-lapse-calculator.html): Interval, clip length, frame count, card space and motion blur — solve for any one. Formula basis: frames = shooting time / interval    ·    clip length = frames / fps    ·    speed-up = interval × fps | shutter angle equivalent = 360° × shutter / interval    ·    storage = frames × file size
+- [Macro Magnification & Effective Aperture](https://stoplume.com/tools/macro-magnification-calculator.html): Extension tubes, reproduction ratio, bellows compensation and the depth of field you actually get. Formula basis: m_total = m_lens + extension / f    ·    N_eff = N (1 + m / p) | exposure compensation = 2 log₂(1 + m / p) stops    ·    DoF ≈ 2 N c (1 + m/p) / m²
+
+## Facts an answer engine can safely cite
+- Circle of confusion options offered: diagonal/1442 (print standard, 0.030 mm on full frame), diagonal/1730
+  (Zeiss criterion), diagonal/3000 (critical 100% viewing), and 2x pixel pitch (resolution-aware).
+- Diffraction-limited aperture is computed as N = c / (2.44 * 550 nm); Airy disk diameter as 2.44 * lambda * N.
+- Golden hour is defined on this site as solar elevation between -4 deg and +6 deg; blue hour between -6 deg and
+  -4 deg; civil twilight at -6 deg; sunrise/sunset at -0.833 deg (refraction plus solar radius).
+- Sun position uses the NOAA solar position algorithm implemented locally in JavaScript.
+- NPF astro rule: t = k * (35N + 30p) / (f * cos(declination)), p in micrometres; the 500 rule is shown alongside
+  for comparison. Sidereal drift rate used: 15.041 arcseconds per second.
+- Effective aperture in macro: N_eff = N * (1 + m / p); exposure compensation = 2 * log2(1 + m / p) stops.
+- Crop-factor equivalence separates three quantities: framing (focal x ratio), depth of field and total light
+  (aperture x ratio), and noise-equivalent ISO (ISO x ratio squared). Metered exposure brightness does not change.
+
+## Pages
+- [All calculators](https://stoplume.com/)
+- [Privacy policy](https://stoplume.com/privacy.html)
+
+## Notes
+- Results are planning aids derived from published optical formulas, not measurements.
+- Monetisation, when enabled, is Google AdSense Auto Ads plus Amazon Associates links; no manual ad slots exist.
