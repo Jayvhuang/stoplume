@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Depth of Field &amp; Diffraction — free &amp; bilingual | Stoplume" data-zh="景深与衍射计算器 — 免费中英双语 | Stoplume">Depth of Field &amp; Diffraction — free &amp; bilingual | Stoplume</title>
+<meta name="description" content="Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore." data-en="Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore." data-zh="近点/远点/超焦距，并给出大多数计算器忽略的衍射极限。">
+<meta name="keywords" content="depth of field calculator, hyperfocal distance, circle of confusion, diffraction limited aperture, airy disk">
+<link rel="canonical" href="https://stoplume.com/tools/depth-of-field-calculator.html">
+<link rel="alternate" hreflang="en" href="https://stoplume.com/tools/depth-of-field-calculator.html">
+<link rel="alternate" hreflang="zh-CN" href="https://stoplume.com/tools/depth-of-field-calculator.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://stoplume.com/tools/depth-of-field-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Depth of Field &amp; Diffraction — free &amp; bilingual | Stoplume">
+<meta property="og:description" content="Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore.">
+<meta property="og:url" content="https://stoplume.com/tools/depth-of-field-calculator.html">
+<meta property="og:image" content="https://stoplume.com/og-image.png">
+<meta property="og:site_name" content="Stoplume">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1220">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+<!-- Google AdSense Auto Ads: activate by replacing ca-pub-XXXXXXXXXXXXXX with a real publisher ID and removing these comment markers. No manual ad slots are used anywhere on this site. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Depth of Field & Diffraction",
+   "url": "https://stoplume.com/tools/depth-of-field-calculator.html",
+   "applicationCategory": "MultimediaApplication",
+   "operatingSystem": "Any modern browser",
+   "browserRequirements": "Requires JavaScript",
+   "description": "Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stoplume",
+    "url": "https://stoplume.com/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Stoplume",
+     "item": "https://stoplume.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Depth of Field & Diffraction",
+     "item": "https://stoplume.com/tools/depth-of-field-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why does your depth of field differ from another calculator?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Almost certainly the circle of confusion. A calculator hard-coded to 0.030 mm on full frame will report roughly 1.7× more depth of field than one using the Zeiss 0.019 mm-equivalent criterion. Stoplume shows the CoC it used in millimetres so you can reproduce or challenge the result."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the diffraction-limited aperture (DLA)?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is the f-number at which the Airy disk grows to the same diameter as your circle of confusion. Past it, diffraction is the dominant blur and stopping down further trades overall sharpness for depth. DLA scales with sensor size, so a Micro Four Thirds body hits it two stops earlier than full frame."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I always focus at the hyperfocal distance for landscapes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Only when you genuinely need detail at the near limit. Hyperfocal focusing puts infinity at the very edge of acceptable sharpness, so distant mountains will be exactly as soft as your CoC allows. If the far subject matters more, focus further out and accept a nearer limit further away."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-zh="跳到主要内容">Skip to content</a>
+<header class="site-head">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text">Stoplume</span>
+  </a>
+  <div class="head-actions">
+    <button type="button" id="lang-btn" class="ghost-btn" aria-label="Switch language">中文</button>
+    <button type="button" id="theme-btn" class="ghost-btn" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Stoplume</a> <span aria-hidden="true">/</span>
+  <span data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</span>
+</nav>
+
+<section class="camera" id="camera">
+  <div class="camera-inner">
+    <span class="camera-label" data-en="Camera profile" data-zh="相机档案">Camera profile</span>
+    <div class="camera-fields">
+      <div class="field">
+        <label for="cam-sensor" data-en="Sensor" data-zh="画幅">Sensor</label>
+        <select id="cam-sensor"><option value="ff" selected>Full Frame 36 × 24</option><option value="apsc">APS-C 23.5 × 15.6 (Sony/Nikon/Fuji)</option><option value="apsc_c">APS-C 22.3 × 14.9 (Canon)</option><option value="apsh">APS-H 27.9 × 18.6</option><option value="mft">Micro Four Thirds 17.3 × 13.0</option><option value="one">1&quot; type 13.2 × 8.8</option><option value="gfx">Medium format 43.8 × 32.9</option><option value="s35">Super 35 cine 24.89 × 18.66</option><option value="smaller">1/1.28&quot; phone 9.8 × 7.3</option><option value="custom">Custom…</option></select>
+      </div>
+      <div class="field cam-custom" id="cam-custom-w" hidden>
+        <label for="cam-w" data-en="Width (mm)" data-zh="宽度（mm）">Width (mm)</label>
+        <input type="number" id="cam-w" value="36" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field cam-custom" id="cam-custom-h" hidden>
+        <label for="cam-h" data-en="Height (mm)" data-zh="高度（mm）">Height (mm)</label>
+        <input type="number" id="cam-h" value="24" min="1" max="200" step="0.01" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="cam-mp" data-en="Resolution (MP)" data-zh="像素（MP）">Resolution (MP)</label>
+        <input type="number" id="cam-mp" value="24" min="1" max="250" step="0.1" inputmode="decimal">
+      </div>
+    </div>
+    <div class="camera-derived" id="cam-derived"></div>
+  </div>
+</section>
+<div class="panels">
+<section class="panel panel-solo" id="tool-dof" data-tool="dof">
+  <header class="panel-head">
+    <span class="panel-icon" aria-hidden="true">◎</span>
+    <div>
+      <h1 data-en="Depth of Field &amp; Diffraction" data-zh="景深与衍射计算器">Depth of Field &amp; Diffraction</h1>
+      <p class="panel-sub" data-en="Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore." data-zh="近点/远点/超焦距，并给出大多数计算器忽略的衍射极限。">Near/far limits, hyperfocal distance — plus the diffraction limit most calculators ignore.</p>
+    </div>
+  </header>
+  <div class="tool-grid">
+    <form class="inputs" onsubmit="return false;" autocomplete="off"><div class="field field-cam"><label for="dof-sensor" data-en="Sensor format" data-zh="画幅">Sensor format</label><div class="camchip" data-camchip="1"><span class="camchip-name">Full Frame 36 × 24</span><a class="camchip-edit" href="#camera" data-en="change" data-zh="更改">change</a></div><small class="hint" data-en="Shared camera profile — set it once, every tool follows." data-zh="全站共用的相机档案——设置一次，所有工具同步。">Shared camera profile — set it once, every tool follows.</small></div><div class="field"><label for="dof-coc" data-en="Circle of confusion criterion" data-zh="弥散圆判据">Circle of confusion criterion</label><select id="dof-coc"><option value="1442" selected data-en="Print standard — diagonal ÷ 1442" data-zh="印刷标准 — 对角线 ÷ 1442">Print standard — diagonal ÷ 1442</option><option value="1730" data-en="Zeiss criterion — diagonal ÷ 1730" data-zh="蔡司判据 — 对角线 ÷ 1730">Zeiss criterion — diagonal ÷ 1730</option><option value="3000" data-en="Critical / 100 % view — diagonal ÷ 3000" data-zh="严苛 / 100% 查看 — 对角线 ÷ 3000">Critical / 100 % view — diagonal ÷ 3000</option><option value="pixel" data-en="Pixel-based — 2 × pixel pitch" data-zh="像素级 — 2 × 像素间距">Pixel-based — 2 × pixel pitch</option><option value="custom" data-en="Custom value" data-zh="自定义">Custom value</option></select></div><div class="field"><label for="dof-coc-custom" data-en="Custom CoC (mm)" data-zh="自定义弥散圆（mm）">Custom CoC (mm)</label><input type="number" id="dof-coc-custom" value="0.03" min="0.001" max="0.2" step="0.001" inputmode="decimal"></div><div class="field"><label for="dof-focal" data-en="Focal length (mm)" data-zh="焦距（mm）">Focal length (mm)</label><input type="number" id="dof-focal" value="50" min="1" max="2000" step="0.1" inputmode="decimal"></div><div class="field"><label for="dof-aperture" data-en="Aperture f/" data-zh="光圈 f/">Aperture f/</label><input type="number" id="dof-aperture" value="2.8" min="0.7" max="64" step="0.1" inputmode="decimal"></div><div class="field"><label for="dof-distance" data-en="Focus distance" data-zh="对焦距离">Focus distance</label><input type="number" id="dof-distance" value="3" min="0.01" max="10000" step="0.01" inputmode="decimal"></div><div class="field"><label for="dof-unit" data-en="Distance unit" data-zh="距离单位">Distance unit</label><select id="dof-unit"><option value="m" selected data-en="Metres" data-zh="米">Metres</option><option value="ft" data-en="Feet" data-zh="英尺">Feet</option></select></div></form>
+    <div class="outputs">
+      <div class="results" id="dof-out" role="status" aria-live="polite"></div>
+      <figure class="viz"><div id="dof-svg"></div>
+        <figcaption class="viz-cap" id="dof-cap"></figcaption></figure>
+    </div>
+  </div>
+  <div class="formula"><span class="formula-tag" data-en="Formula" data-zh="公式">Formula</span>
+    <code>H = f² / (N · c) + f    ·    D<sub>n</sub> = s(H − f) / (H + s − 2f)    ·    D<sub>f</sub> = s(H − f) / (H − s)<br>Airy disk ⌀ = 2.44 · λ · N (λ = 550 nm)    ·    Total blur = √(defocus² + diffraction²)</code></div>
+  <div class="explain"><p data-en="Depth of field is not a property of the lens — it is a decision about how much blur you are willing to call sharp. That tolerance is the &lt;strong&gt;circle of confusion&lt;/strong&gt; (CoC): the largest out-of-focus disk that still reads as a point at your intended viewing size. Every depth-of-field number you have ever seen is downstream of that single assumption, which is why two calculators can disagree by a factor of two on the same lens." data-zh="景深不是镜头的固有属性，而是一个判断：你愿意把多大的模糊仍然称为「清晰」。这个容忍度就是&lt;strong&gt;弥散圆&lt;/strong&gt;（CoC）——在你预期的观看尺寸下，仍然被眼睛读作「一个点」的最大失焦光斑。你见过的所有景深数字都建立在这一个假设之上，这也是为什么两个计算器算同一支镜头能差出一倍。">Depth of field is not a property of the lens — it is a decision about how much blur you are willing to call sharp. That tolerance is the <strong>circle of confusion</strong> (CoC): the largest out-of-focus disk that still reads as a point at your intended viewing size. Every depth-of-field number you have ever seen is downstream of that single assumption, which is why two calculators can disagree by a factor of two on the same lens.</p><p data-en="Stoplume makes the assumption explicit and lets you change it. Pick the classic print criterion (diagonal ÷ 1442, which gives the familiar 0.030 mm on full frame), the stricter Zeiss criterion (÷ 1730), a critical 100 % pixel-peeping criterion (÷ 3000), or a genuinely resolution-aware criterion of two pixel pitches — the point at which the sensor itself can no longer record the difference." data-zh="Stoplume 把这个假设摆到台面上，并允许你更换：经典印刷判据（对角线 ÷ 1442，全画幅得到熟悉的 0.030 mm）、更严格的蔡司判据（÷ 1730）、100% 放大查看的严苛判据（÷ 3000），以及真正与分辨率挂钩的「2 × 像素间距」——超过这个尺度，传感器本身已经记录不出差别。">Stoplume makes the assumption explicit and lets you change it. Pick the classic print criterion (diagonal ÷ 1442, which gives the familiar 0.030 mm on full frame), the stricter Zeiss criterion (÷ 1730), a critical 100 % pixel-peeping criterion (÷ 3000), or a genuinely resolution-aware criterion of two pixel pitches — the point at which the sensor itself can no longer record the difference.</p><p data-en="The second half of the story is &lt;strong&gt;diffraction&lt;/strong&gt;, which almost every free depth-of-field calculator leaves out. Stopping down shrinks the defocus blur but grows the Airy disk, so beyond a certain aperture your extra depth of field is paid for with a globally softer frame. Stoplume computes the Airy disk diameter, the diffraction-limited aperture for your chosen CoC, compares the Airy disk against your actual pixel pitch, and combines defocus and diffraction in quadrature to report the aperture where total blur is smallest for your subject." data-zh="故事的另一半是&lt;strong&gt;衍射&lt;/strong&gt;，几乎所有免费景深计算器都把它省略了。收缩光圈会缩小失焦模糊，却同时放大艾里斑；越过某个光圈之后，多出来的景深是用整幅画面变肉换来的。Stoplume 会算出艾里斑直径、你所选判据下的衍射极限光圈，把艾里斑与你的实际像素间距做对比，并将失焦模糊与衍射模糊按平方和相加，给出总模糊最小的那一档光圈。">The second half of the story is <strong>diffraction</strong>, which almost every free depth-of-field calculator leaves out. Stopping down shrinks the defocus blur but grows the Airy disk, so beyond a certain aperture your extra depth of field is paid for with a globally softer frame. Stoplume computes the Airy disk diameter, the diffraction-limited aperture for your chosen CoC, compares the Airy disk against your actual pixel pitch, and combines defocus and diffraction in quadrature to report the aperture where total blur is smallest for your subject.</p></div>
+  <div class="faq">
+    <h3 data-en="Frequently asked" data-zh="常见问题">Frequently asked</h3>
+    <details class="faq-item"><summary data-en="Why does your depth of field differ from another calculator?" data-zh="为什么你算出的景深和别的计算器不一样？">Why does your depth of field differ from another calculator?</summary><p data-en="Almost certainly the circle of confusion. A calculator hard-coded to 0.030 mm on full frame will report roughly 1.7× more depth of field than one using the Zeiss 0.019 mm-equivalent criterion. Stoplume shows the CoC it used in millimetres so you can reproduce or challenge the result." data-zh="几乎一定是弥散圆判据不同。写死 0.030 mm 的全画幅计算器，得出的景深会比使用蔡司判据的计算器大约多 1.7 倍。Stoplume 会直接显示所用的弥散圆毫米值，你可以复现或质疑这个结果。">Almost certainly the circle of confusion. A calculator hard-coded to 0.030 mm on full frame will report roughly 1.7× more depth of field than one using the Zeiss 0.019 mm-equivalent criterion. Stoplume shows the CoC it used in millimetres so you can reproduce or challenge the result.</p></details><details class="faq-item"><summary data-en="What is the diffraction-limited aperture (DLA)?" data-zh="什么是衍射极限光圈（DLA）？">What is the diffraction-limited aperture (DLA)?</summary><p data-en="It is the f-number at which the Airy disk grows to the same diameter as your circle of confusion. Past it, diffraction is the dominant blur and stopping down further trades overall sharpness for depth. DLA scales with sensor size, so a Micro Four Thirds body hits it two stops earlier than full frame." data-zh="就是艾里斑直径长到与弥散圆相等时的光圈值。越过它，衍射成为主导模糊，继续收缩光圈是用整体锐度换景深。DLA 随画幅缩放，M4/3 会比全画幅早约两档到达。">It is the f-number at which the Airy disk grows to the same diameter as your circle of confusion. Past it, diffraction is the dominant blur and stopping down further trades overall sharpness for depth. DLA scales with sensor size, so a Micro Four Thirds body hits it two stops earlier than full frame.</p></details><details class="faq-item"><summary data-en="Should I always focus at the hyperfocal distance for landscapes?" data-zh="拍风光是不是永远该对焦在超焦距上？">Should I always focus at the hyperfocal distance for landscapes?</summary><p data-en="Only when you genuinely need detail at the near limit. Hyperfocal focusing puts infinity at the very edge of acceptable sharpness, so distant mountains will be exactly as soft as your CoC allows. If the far subject matters more, focus further out and accept a nearer limit further away." data-zh="只有当你确实需要近处也有细节时才这么做。超焦距对焦会把无穷远刚好放在可接受清晰的边界上，远山会恰好软到你的弥散圆允许的极限。如果远景更重要，就对得更远一些，接受近点后移。">Only when you genuinely need detail at the near limit. Hyperfocal focusing puts infinity at the very edge of acceptable sharpness, so distant mountains will be exactly as soft as your CoC allows. If the far subject matters more, focus further out and accept a nearer limit further away.</p></details>
+  </div>
+  <div class="sources">
+    <h3 data-en="References" data-zh="参考来源">References</h3>
+    <ul><li><a href="https://en.wikipedia.org/wiki/Circle_of_confusion" target="_blank" rel="noopener nofollow">Circle of confusion — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Depth_of_field" target="_blank" rel="noopener nofollow">Depth of field — Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Airy_disk" target="_blank" rel="noopener nofollow">Airy disk — Wikipedia</a></li></ul>
+  </div>
+</section></div>
+<section class="section">
+  <h2 data-en="Other Stoplume calculators" data-zh="其他 Stoplume 计算器">Other Stoplume calculators</h2>
+  <div class="chips"><a class="chip" href="exposure-value-calculator.html" data-en="Exposure Triangle &amp; EV Solver" data-zh="曝光三角与 EV 求解器">Exposure Triangle &amp; EV Solver</a><a class="chip" href="crop-factor-equivalence.html" data-en="Crop Factor &amp; Full-Frame Equivalence" data-zh="等效焦距与画幅换算">Crop Factor &amp; Full-Frame Equivalence</a><a class="chip" href="field-of-view-calculator.html" data-en="Field of View &amp; Framing Distance" data-zh="视角与取景距离">Field of View &amp; Framing Distance</a><a class="chip" href="astrophotography-shutter-calculator.html" data-en="Astro Shutter — NPF vs 500 Rule" data-zh="星空快门 — NPF 与 500 法则">Astro Shutter — NPF vs 500 Rule</a><a class="chip" href="nd-filter-calculator.html" data-en="ND Filter &amp; Long Exposure" data-zh="ND 减光镜与长曝光">ND Filter &amp; Long Exposure</a><a class="chip" href="flash-guide-number-calculator.html" data-en="Flash Guide Number &amp; Inverse Square" data-zh="闪光指数与平方反比">Flash Guide Number &amp; Inverse Square</a><a class="chip" href="golden-hour-calculator.html" data-en="Golden Hour &amp; Sun Position" data-zh="黄金时刻与太阳方位">Golden Hour &amp; Sun Position</a><a class="chip" href="time-lapse-calculator.html" data-en="Time-lapse Interval Planner" data-zh="延时摄影间隔规划">Time-lapse Interval Planner</a><a class="chip" href="macro-magnification-calculator.html" data-en="Macro Magnification &amp; Effective Aperture" data-zh="微距放大倍率与有效光圈">Macro Magnification &amp; Effective Aperture</a></div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <strong>Stoplume</strong>
+      <p data-en="Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs."
+         data-zh="给摄影师的光学与用光计算工具。全部在浏览器内运行——不上传、不注册、不追踪你的输入。">Optical and light-planning calculators for photographers. Everything runs in your browser — no upload, no account, no tracking of your inputs.</p>
+    </div>
+    <div>
+      <strong data-en="Site" data-zh="站点">Site</strong>
+      <ul>
+        <li><a href="../index.html" data-en="All calculators" data-zh="全部计算器">All calculators</a></li>
+        <li><a href="../privacy.html" data-en="Privacy policy" data-zh="隐私政策">Privacy policy</a></li>
+        <li><a href="../llms.txt" data-en="llms.txt" data-zh="llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong data-en="Accuracy note" data-zh="精度说明">Accuracy note</strong>
+      <p data-en="Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames."
+         data-zh="结果依据公开的光学公式计算，属于规划参考而非实测数据。关键工作请以自己的试拍文件为准。">Results are computed from published optical formulas and are planning aids, not measurements. Verify critical work against your own test frames.</p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Stoplume. <span data-en="Built for photographers who like knowing why." data-zh="献给想知道「为什么」的摄影师。">Built for photographers who like knowing why.</span></p>
+</footer>
+<script src="../app.js"></script>
+</body>
+</html>
